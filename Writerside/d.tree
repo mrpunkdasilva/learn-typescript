@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="d"
+                 name="docs"
+                 start-page="starter-topic.md">
+
+    <toc-element topic="starter-topic.md"/>
+    <toc-element topic="Compiling-TS-with-TSC.md"/>
+    <toc-element topic="Variables-and-Values.md"/>
+    <toc-element topic="Type-Casting.md"/>
+    <toc-element topic="Functions-and-Returning-Types.md"/>
+    <toc-element topic="Objects.md"/>
+</instance-profile>

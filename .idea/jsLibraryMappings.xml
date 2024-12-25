@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <excludedPredefinedLibrary name="learn-typescript-fundamentals/typescript-courses/node_modules" />
+    <excludedPredefinedLibrary name="learn-typescript-fundamentals/typescript-courses/packages/chat/node_modules" />
+    <excludedPredefinedLibrary name="learn-typescript-fundamentals/typescript-courses/packages/hello-ts/node_modules" />
+    <excludedPredefinedLibrary name="learn-typescript-fundamentals/typescript-courses/packages/website/node_modules" />
+  </component>
+</project>
