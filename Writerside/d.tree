@@ -12,4 +12,7 @@
     <toc-element topic="Type-Casting.md"/>
     <toc-element topic="Functions-and-Returning-Types.md"/>
     <toc-element topic="Objects.md"/>
+    <toc-element topic="Arrays.md"/>
+    <toc-element topic="Tuples.md"/>
+    <toc-element topic="Structural-and-Nominal-Types.md"/>
 </instance-profile>

@@ -57,4 +57,25 @@ function showInfoCar(car?: {
 }
 ````
 
-##
+## Assinaturas Indexadas
+Esses tipo de estrutura de dados é o que chamamos também de dicionários, são estruturas onde temos um index 
+
+No caso de dicionarios o comum é usar uma string para servir de indexador:
+```typescript
+const phones = {
+  home: { country: "+1", area: "211", number: "652-4515" },
+  work: { country: "+1", area: "670", number: "752-5856" },
+  fax: { country: "+1", area: "322", number: "525-4357" },
+}
+```
+
+Delarando com notação de tipos:
+```typescript
+const phones: {
+  [k: string]: {
+    country: string
+    area: string
+    number: string
+  }
+} = {}
+```
