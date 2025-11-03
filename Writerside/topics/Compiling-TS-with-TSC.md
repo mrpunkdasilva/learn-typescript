@@ -2,6 +2,9 @@
 
 O  **TSC** (TypeScript Compiler) é o compilador do TypeScript.
 
+![Figura 1: Diagramação de como o TypeScript funciona](how_ts_works.svg)
+
+
 ## Anatomia do Projeto
 - `package.json` - vai ser onde as dependencias do projeto ficaram
 - `tsconfig.json` - vai ser onde ficaram as configuração do compilador do TS
@@ -80,3 +83,5 @@ class Foo {
 > Para compilar chamando diretamente o compilador (TSC) usamos: `[gerenciador de pacote] tsc`
 > - `npm tsc`
 > - `yarn tsc`
+
+

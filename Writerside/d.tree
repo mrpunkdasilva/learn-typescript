@@ -3,10 +3,11 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="d"
-                 name="docs"
+                 name="Learn TypeScript"
                  start-page="starter-topic.md">
 
     <toc-element topic="starter-topic.md"/>
+    <toc-element topic="JavaScript-Built-in-Types.md"/>
     <toc-element topic="Compiling-TS-with-TSC.md"/>
     <toc-element topic="Variables-and-Values.md"/>
     <toc-element topic="Type-Casting.md"/>
