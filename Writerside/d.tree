@@ -8,12 +8,14 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="JavaScript-Built-in-Types.md"/>
+    <toc-element topic="Inheritance.md"/>
     <toc-element topic="Compiling-TS-with-TSC.md"/>
     <toc-element topic="Variables-and-Values.md"/>
     <toc-element topic="Type-Casting.md"/>
     <toc-element topic="Functions-and-Returning-Types.md"/>
     <toc-element topic="Objects.md"/>
+    <toc-element topic="Tuples.md">
+    </toc-element>
     <toc-element topic="Arrays.md"/>
-    <toc-element topic="Tuples.md"/>
     <toc-element topic="Structural-and-Nominal-Types.md"/>
 </instance-profile>
