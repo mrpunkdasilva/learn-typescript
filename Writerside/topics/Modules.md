@@ -50,6 +50,19 @@ A função definida no arquivo recebe um preço e aplica 20% de taxa. A função
 Basta usarmos a keyword: `import calcTax from "./tax";`
 
 ```javascript
+import calcTax from "./tax";
 
+class Product {
+    constructor(name, price) {
+        this.id = Symbol();
+        this.name = name;
+        this.price = price;
+    }
+}
+
+let product = new Product("Hat", 100);
+let taxedPrice = calcTax(product.price);
+
+console.log(`Name: ${ product.name }, Taxed Price: ${taxedPrice}`);
 ```
 
