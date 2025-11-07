@@ -28,6 +28,8 @@ data.boots = new Product("Boots", 100);
 Object.keys(data).forEach(key => console.log(data[key].toString()))
 ```
 
+## Armazenando dados pela chave com `Object`
+
 > `Object.keys(object)` usado para retornar um array contendo os nomes definidos apropriadamente pelo objeto
 > `Object.values(object)` esse método é usado para retornar um array com todos os valores do objeto
 
@@ -37,5 +39,5 @@ Assim conseguimos pegar a chave do objeto sem saber qual ela é exatamente e  ac
 Object.keys(data).forEach(key => console.log(data[key].toString()))
 ```
 
-
+## Armazenando dados por um Map
 
