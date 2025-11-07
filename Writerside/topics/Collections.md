@@ -157,6 +157,7 @@ Alguns métodos uteis:
 | `has()`        | Retorna `true` se o Set contém o valor especificado.                   | `set.has('banana')`                  |
 | `forEach()`    | Executa uma função para cada valor no Set.                             | `set.forEach(v => console.log(v))`   |
 
+> Confira a documentação da API do Set: [clique aqui](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
-
+ 
 
