@@ -86,4 +86,36 @@ Alguns métodos importantes:
 - Não tem suporte para serialização ou analise sintática, mas pode ser implementado: [veja mais na discussion do StackOverflow](https://stackoverflow.com/questions/29085197/how-do-you-json-stringify-an-es6-map)
 
 
+## Usando Symbols para chaves do Map
 
+A principal vantagem de usar um Map é que qualquer valor pode ser uma chave (_key_), incluindo **[Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)**
+
+Cada valor de um Symbol é único e imutavel e idealmente escolhido para um identificador de objetos
+
+```javascript
+class Product {
+    constructor(name, price) {
+        this.id = Symbol();
+        this.name = name;
+        this.price = price;
+    }
+}
+class Supplier {
+    constructor(name, productids) {
+        this.name = name;
+        this.productids = productids;
+    }
+}
+let acmeProducts = [new Product("Hat", 100), new Product("Boots", 100)];
+let zoomProducts = [new Product("Hat", 100), new Product("Boots", 100)];
+let products = new Map();
+
+[...acmeProducts, ...zoomProducts].forEach(p => products.set(p.id, p));
+
+let suppliers = new Map();
+
+suppliers.set("acme", new Supplier("Acme Co", acmeProducts.map(p => p.id)));
+suppliers.set("zoom", new Supplier("Zoom Shoes", zoomProducts.map(p => p.id)));
+suppliers.get("acme").productids.forEach(id =>
+        console.log(`Name: ${products.get(id).name}`));
+```
