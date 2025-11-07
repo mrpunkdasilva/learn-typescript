@@ -30,3 +30,26 @@ Ou seja, `app.js` e `user-controller.js` são dois módulos separados que não c
 
 ![two modules that they dont talk](two modules that they dont talk)
 
+### Exemplo
+
+Criamos um arquivo `tax.js` na pasta:
+
+```javascript
+export default function (price) {
+    return Number(price) * 1.2;
+}
+```
+
+A função definida no arquivo recebe um preço e aplica 20% de taxa. A função é simples e a exportação se dá pelas keywords que são importantes: `export defaul`
+- O `export` é usado para denotar que features que poderão ser usadas fora do módulo
+- Por padrão o conteúdo de um arquivo JavaScript são privados e devem ser compartilhados de forma explicita usando a keyword `export` antes deles serem usados no resto da aplicação
+- Agora a outra parte o `default` é usado para especificar que somente será exportado aquela função no arquivo `tax.js`
+
+## Usando Módulos
+
+Basta usarmos a keyword: `import calcTax from "./tax";`
+
+```javascript
+
+```
+
