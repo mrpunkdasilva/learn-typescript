@@ -66,3 +66,28 @@ let taxedPrice = calcTax(product.price);
 console.log(`Name: ${ product.name }, Taxed Price: ${taxedPrice}`);
 ```
 
+> Não precisamos passar a extensão do arquivo se ele for `js` (o mesmo acontece com todas as outras ramificações que temos como `.ts` ou `.jsx`), basta passarmos o caminho do arquivo
+
+### Entendendo localização de módulos
+
+Quando temos módulos definidos no **próprio** projeto preciamos passar o path relativo:
+- `import calcTax from "./tax";`
+
+Quando o módulo é **externo** não precisamos:
+- `import React, { Component } from "react";`
+
+> Isso acontece porque a ferramenta de build vai buscar em `node_modules` o módulo a ser importado
+
+
+### Exportando feature nomeadas de um módulo:
+
+| Tipo de Exportação     | Código de Exportação                                      | Código de Importação                                      | Observação                                                                 |
+|------------------------|-----------------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------|
+| Exportação nomeada     | `export function calculateTax(price) { ... }`             | `import { calculateTax } from "./tax";`                    | Usa chaves `{}` para importar pelo nome definido                          |
+| Exportação default     | `export default function calcTaxandSum(...) { ... }`      | `import calcTaxAndSum from "./tax";`                       | Pode ser importado com qualquer nome, sem `{}`                            |
+| Exportação combinada   | `export default ...` + `export function ...`              | `import calcTaxAndSum, { calculateTax } from "./tax";`     | Combina exportação default e nomeada                                      |
+| Múltiplas nomeadas     | `export function printDetails(...)`<br>`export function applyDiscount(...)` | `import { printDetails, applyDiscount } from "./utils";` | Permite agrupar várias funções relacionadas no mesmo módulo               |
+
+ 
+
+
