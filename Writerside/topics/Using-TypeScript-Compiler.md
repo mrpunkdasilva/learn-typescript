@@ -97,3 +97,42 @@ config de `noEmitOnError` estiver `true`:
   }
 }
 ```
+
+## Rodando com watch
+
+Com a flag `watch` ao rodarmos temos o beneficio da recompilação automatica ao termos mudado o código
+
+
+## Execução automatica do código depois da compilação
+
+O modo de compilação assistida ou compiler's watch mode não executa o código compilado
+
+Então para resolver isso podemos usar o pacote open source do `tsc-watch`
+
+```sh
+npx tsc-watch --onsuccess "node dist/index.js
+```
+
+Para não precisar ficar digitando isso, podemos adicionar um script para ser rodado com o npm:
+
+```json
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc-watch --onsuccess \"node dist/index.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.5.1"
+  }
+```
+
+
+
+ 
