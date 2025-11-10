@@ -133,6 +133,6 @@ Para não precisar ficar digitando isso, podemos adicionar um script para ser ro
   }
 ```
 
+Logo basta rodar apenas:
 
-
- 
+> npm start
