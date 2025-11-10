@@ -59,3 +59,20 @@ Precisamos ter o arquivo de configuração do TypeScript criado na pasta raiz do
 
 ## Entendo o arquivo de configuração do TypeScript Compiler 
 
+O TSC (_TypeScript Compiler_) possui diversas configurações possiveis a serem feitas e todas são feitas no arquivo de configuração que temos (`tsconfig.json`)
+
+As configs básicas que temos são:
+
+| Configuração       | Função                                                                 |
+|--------------------|------------------------------------------------------------------------|
+| **compilerOptions** | Agrupa as opções e configurações que o compilador irá usar.            |
+| **files**           | Especifica arquivos exatos a serem compilados (sobrescreve busca padrão). |
+| **include**         | Seleciona arquivos para compilação por padrão/padrão de busca.         |
+| **exclude**         | Exclui arquivos da compilação por padrão/padrão de busca.              |
+| **compileOnSave**   | Quando `true`, pede ao editor para compilar ao salvar (nem todos suportam). |
+
+
+ Podemos exibir a lista de arquivos para compilação que podemos usar:
+ ```sh
+tsc --listFiles
+ ```
