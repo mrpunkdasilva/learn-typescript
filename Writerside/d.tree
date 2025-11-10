@@ -36,5 +36,6 @@
         <toc-element topic="Compiling-TS-with-TSC.md"/>
         <toc-element topic="Targeting-EcmaScript.md"/>
         <toc-element topic="Using-Modules.md"/>
+        <toc-element topic="Useful-compiler-options.md"/>
     </toc-element>
 </instance-profile>
