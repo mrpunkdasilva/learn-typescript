@@ -98,7 +98,7 @@ src/        # web client
   data/     # data layer
   ui/       # react components
   utils/    # low-level utilities
-  index.js  # entry point
+  index.ts  # entry point
 ```
 
 There's a API and database in this project as well, but we won't be changing them during the workshop.

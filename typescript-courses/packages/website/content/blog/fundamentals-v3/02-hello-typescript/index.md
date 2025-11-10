@@ -128,7 +128,7 @@ You should see something in your terminal like:
 Note that within the "hello-ts" project
 
 - a `./dist` folder has appeared,
-- inside it is an `index.js` file.
+- inside it is an `index.ts` file.
 
 Open this file -- **it will be a mess**
 
@@ -355,7 +355,7 @@ If we go to `hello-ts/tsconfig.json` and change the "compilerOptions.target" pro
 }
 ```
 
-Look at that `dist/index.js` file again -- it's much cleaner now! Do you notice what has changed? Can you find a `Promise` constructor? Maybe the `yield` keyword?
+Look at that `dist/index.ts` file again -- it's much cleaner now! Do you notice what has changed? Can you find a `Promise` constructor? Maybe the `yield` keyword?
 
 <details>
   <summary>Click here to see what the compiled output looks like</summary>
@@ -488,7 +488,7 @@ Did you notice that the `export` keyword was still present in the build output f
 If you tried to run this file with `node` like this:
 
 ```sh
-node packages/hello-ts/dist/index.js
+node packages/hello-ts/dist/index.ts
 ```
 
 There's an error!
@@ -513,7 +513,7 @@ Let's add a new property to our `tsconfig` file:
 +   "module": "CommonJS",
 ```
 
-Look at your `packages/hello-ts/dist/index.js` one more time now. You should see
+Look at your `packages/hello-ts/dist/index.ts` one more time now. You should see
 that the way the `addNumbers` function is exported has changed:
 
 ```js twoslash
@@ -529,7 +529,7 @@ This is an indication that we're emitting CommonJS modules! We could try running
 this program with `node` one more time:
 
 ```sh
-node packages/hello-ts/dist/index.js
+node packages/hello-ts/dist/index.ts
 ```
 
 If the program works correctly at this point, we should see it pause for a short

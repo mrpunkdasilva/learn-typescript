@@ -78,7 +78,7 @@ class Foo {
 
 - Agora vamos rodar, para isso use: `npm run dev` ativar o script para ficar observando o arquivo para automatico rebuild a cada alteração
 
-- Então bastar irmos agora para o terminal e digitar `node dist/index.js` que é a pasta e o arquivo que o compilador gerou ao compilarmos e assim o node vai executar esse arquivo JavaScript
+- Então bastar irmos agora para o terminal e digitar `node dist/index.ts` que é a pasta e o arquivo que o compilador gerou ao compilarmos e assim o node vai executar esse arquivo JavaScript
 
 > Para compilar chamando diretamente o compilador (TSC) usamos: `[gerenciador de pacote] tsc`
 > - `npm tsc`

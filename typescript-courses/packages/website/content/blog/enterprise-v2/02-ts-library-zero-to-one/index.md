@@ -83,7 +83,7 @@ Add the following fields your `packages/chat-stdlib/package.json` file
 
 ```json
  {
-   "main": "dist/index.js",
+   "main": "dist/index.ts",
    "types": "dist/index.d.ts",
    "scripts": {
      "build": "yarn tsc",
@@ -334,7 +334,7 @@ ls dist        # list the contents of the dist/ folder
 You should see something like
 
 ```sh
-index.d.ts index.js
+index.d.ts index.ts
 ```
 
 Make a commit! We have working build script.

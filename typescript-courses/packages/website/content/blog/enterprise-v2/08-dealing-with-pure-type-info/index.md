@@ -199,7 +199,7 @@ You should see that TypeScript is not happy about the `'http-error'` module.
 Could not find a declaration file for module 'http-error'
 ```
 
-We're now depending on a library for the `HTTPError` class, but it doesn't provide any type information! This library is located within the workshop repo (we'll learn more about how to do this later) at `packages/http-error/index.js`.
+We're now depending on a library for the `HTTPError` class, but it doesn't provide any type information! This library is located within the workshop repo (we'll learn more about how to do this later) at `packages/http-error/index.ts`.
 
 Let's use this opportunity to "patch" the type information within our `chat` project
 
@@ -221,7 +221,7 @@ Look back at `networking.ts` and you should see that the import resolves, but in
 Expected 0 arguments, but got 2
 ```
 
-Look at the source code for the library in `packages/http-error/index.js` and consider what the constructor wants to accept as arguments.
+Look at the source code for the library in `packages/http-error/index.ts` and consider what the constructor wants to accept as arguments.
 
 Add this constructor declaration within the class declaration, and the errors should go away
 

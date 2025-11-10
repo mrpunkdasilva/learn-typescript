@@ -15,7 +15,7 @@ npm install esm@3.2.2
 2. Agora é rodar:
 
 ```sh
-npx nodemon --require esm index.js
+npx nodemon --require esm index.ts
 ```
 
 3. A saída será essa:

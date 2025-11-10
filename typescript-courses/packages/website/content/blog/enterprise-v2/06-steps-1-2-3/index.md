@@ -60,7 +60,7 @@ You should see a couple of errors, all within the `src/` folder
 Found 8 errors in 4 files.
 
 Errors  Files
-     1  src/index.js:8
+     1  src/index.ts:8
      1  src/ui/App.jsx:22
      4  src/ui/components/Channel.jsx:19
      2  src/utils/networking.js:40
@@ -123,7 +123,7 @@ and don't forget to make this small change to [`/index.html`](/index.html)
    </head>
    <body class="font-sans antialiased h-screen">
      <div id="appContainer" class="w-full h-full"></div>
--    <script src="src/index.js" type="text/javascript"></script>
+-    <script src="src/index.ts" type="text/javascript"></script>
 +    <script src="src/index.ts" type="text/javascript"></script>
    </body>
  </html>

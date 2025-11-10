@@ -82,7 +82,7 @@ import { Raspberry } from './berries/raspberry'
 let x: Raspberry = { color: 'red' };
 ```
 
-Here's the `index.js` file, and the compiled output of `index.ts`
+Here's the `index.ts` file, and the compiled output of `index.ts`
 
 ```ts twoslash
 // @showEmit
@@ -172,13 +172,13 @@ class Banana {
 }
 module.exports = { Banana }
 ////////////////////////////////////////////////////////
-// @filename: index.js
+// @filename: index.ts
 const Banana = require('./banana') // CJS style import
 const banana = new Banana()
 banana.peel()
 ```
 
-In this scenario, if we converted the `index.js` file to TypeScript, we could continue to use the `banana.js` module as-is by using a namespace import
+In this scenario, if we converted the `index.ts` file to TypeScript, we could continue to use the `banana.js` module as-is by using a namespace import
 
 ```ts{7} twoslash
 // @checkJs
@@ -359,13 +359,13 @@ const melon = new Melon()
 melon.cutIntoSlices()
 ```
 
-and `index.js`, the compiled output of `index.ts`.
+and `index.ts`, the compiled output of `index.ts`.
 
 ```ts twoslash
 // @module: CommonJS
 // @types: node
 // @showEmit
-// @showEmittedFile: index.js
+// @showEmittedFile: index.ts
 ////////////////////////////////////////////////////////
 // @filename: melon.ts
 class Melon {
