@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "tslint:recommended"
+  ],
+  "linterOptions": {
+    "format": "verbose"
+  }
+}

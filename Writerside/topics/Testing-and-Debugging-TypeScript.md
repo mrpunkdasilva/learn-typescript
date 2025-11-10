@@ -46,3 +46,44 @@ console.log(`Total: ${total}`);
 
 ### Usando o Debugger integrado do NodeJS
 
+É possivel usarmos o proprio debugger que vem junto ao NodeJS, temos que usar:
+
+- **Iniciar depuração**  
+  Execute:  
+  ```bash
+  node inspect dist/index.js
+  ```  
+  Isso abre o depurador embutido do Node, carrega o arquivo compilado e pausa a execução antes da primeira linha. Você verá o prompt `debug>`.
+
+- **Continuar execução**  
+  No prompt, digite:  
+  ```bash
+  c
+  ```  
+  (abreviação de *continue*). O programa segue até o próximo *breakpoint* ou instrução `debugger`.
+
+- **Avaliar expressões**  
+  Use:  
+  ```bash
+  exec("expressao")
+  ```  
+  Exemplo:  
+  ```bash
+  exec("message")
+  ```  
+  Mostra o valor da variável `message`. As expressões precisam estar entre aspas.
+
+- **Ajuda**  
+  Digite:  
+  ```bash
+  help
+  ```  
+  Lista os comandos disponíveis, como avançar (`n`), entrar em função (`s`), definir *breakpoints* (`sb`) e inspecionar a pilha de chamadas.
+
+- **Sair**  
+  Pressione **Ctrl+C duas vezes**:  
+  - A primeira interrompe o comando atual.  
+  - A segunda encerra o depurador e volta ao prompt normal.
+
+
+
