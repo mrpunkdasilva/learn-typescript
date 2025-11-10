@@ -1,4 +1,4 @@
-# Usando versões do EcmaScript
+# Using target version
 
 Como o TS é um superset, é como pegarmos alguma versão do JS e termos novas features, ou seja. Com o TS conseguimos usar diversas versões target (alvo) do JS para trabalharmos
 
