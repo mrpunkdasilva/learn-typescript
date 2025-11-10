@@ -1,7 +1,7 @@
 # Using TypeScript Compiler
 
 > [https://github.com/mrpunkdasilva/learn-typescript/blob/9ef0a68b44f22c7a7be5944a44f15e51504ac838/tools](https://github.com/mrpunkdasilva/learn-typescript/blob/9ef0a68b44f22c7a7be5944a44f15e51504ac838/tools)
-
+ 
 
 Para instalar o TypeScript:
 

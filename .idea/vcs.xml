@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/chapter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/essential-typescript" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/typescript-courses" vcs="Git" />
   </component>
 </project>
