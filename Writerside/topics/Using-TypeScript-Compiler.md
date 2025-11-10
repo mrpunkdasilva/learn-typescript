@@ -11,19 +11,20 @@ npm i -D typescript
 
 Precisamos ter o arquivo de configuração do TypeScript criado na pasta raiz do projeto:
 
-- `tsconfig.json` 
+- `tsconfig.json`
+
 ```json
 {
-    "compilerOptions": {
-        "target": "es2018",
-        "outDir": "./dist",
-        "rootDir": "./src"
-    }
+  "compilerOptions": {
+    "target": "es2018",
+    "outDir": "./dist",
+    "rootDir": "./src"
+  }
 }
 ```
 
-
 - `package.json`
+
 ```json
 {
   "name": "tools",
@@ -45,34 +46,54 @@ Precisamos ter o arquivo de configuração do TypeScript criado na pasta raiz do
 
 ## Project Structure
 
+| Item                  | Função                                                                   |
+|-----------------------|--------------------------------------------------------------------------|
+| **dist**              | Contém o código compilado gerado pelo compilador.                        |
+| **node_modules**      | Armazena os pacotes necessários para a aplicação e ferramentas.          |
+| **src**               | Contém os arquivos de código-fonte que serão compilados pelo TypeScript. |
+| **package.json**      | Lista as dependências principais do projeto e metadados.                 |
+| **package-lock.json** | Registra todas as dependências exatas e suas versões.                    |
+| **tsconfig.json**     | Define as configurações do compilador TypeScript.                        |
 
-| Item               | Função                                                                 |
-|--------------------|------------------------------------------------------------------------|
-| **dist**           | Contém o código compilado gerado pelo compilador.                      |
-| **node_modules**   | Armazena os pacotes necessários para a aplicação e ferramentas.        |
-| **src**            | Contém os arquivos de código-fonte que serão compilados pelo TypeScript.|
-| **package.json**   | Lista as dependências principais do projeto e metadados.               |
-| **package-lock.json** | Registra todas as dependências exatas e suas versões.               |
-| **tsconfig.json**  | Define as configurações do compilador TypeScript.                      |
+## Entendo o arquivo de configuração do TypeScript Compiler
 
-
-
-## Entendo o arquivo de configuração do TypeScript Compiler 
-
-O TSC (_TypeScript Compiler_) possui diversas configurações possiveis a serem feitas e todas são feitas no arquivo de configuração que temos (`tsconfig.json`)
+O TSC (_TypeScript Compiler_) possui diversas configurações possiveis a serem feitas e todas são feitas no arquivo de
+configuração que temos (`tsconfig.json`)
 
 As configs básicas que temos são:
 
-| Configuração       | Função                                                                 |
-|--------------------|------------------------------------------------------------------------|
-| **compilerOptions** | Agrupa as opções e configurações que o compilador irá usar.            |
-| **files**           | Especifica arquivos exatos a serem compilados (sobrescreve busca padrão). |
-| **include**         | Seleciona arquivos para compilação por padrão/padrão de busca.         |
-| **exclude**         | Exclui arquivos da compilação por padrão/padrão de busca.              |
+| Configuração        | Função                                                                      |
+|---------------------|-----------------------------------------------------------------------------|
+| **compilerOptions** | Agrupa as opções e configurações que o compilador irá usar.                 |
+| **files**           | Especifica arquivos exatos a serem compilados (sobrescreve busca padrão).   |
+| **include**         | Seleciona arquivos para compilação por padrão/padrão de busca.              |
+| **exclude**         | Exclui arquivos da compilação por padrão/padrão de busca.                   |
 | **compileOnSave**   | Quando `true`, pede ao editor para compilar ao salvar (nem todos suportam). |
 
+Podemos exibir a lista de arquivos para compilação que podemos usar:
 
- Podemos exibir a lista de arquivos para compilação que podemos usar:
  ```sh
 tsc --listFiles
  ```
+
+![tsc list files](list files)
+
+## Compilando código TypeScript
+
+Para compilarmos os arquivos TS usamos o comando dentro da pasta raiz do projeto:
+
+> tsc
+
+Quando o compilador roda, a saida ira ser gerada somente quando não existir erros detectados no código JS quando a
+config de `noEmitOnError` estiver `true`:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmitOnError": true
+  }
+}
+```
