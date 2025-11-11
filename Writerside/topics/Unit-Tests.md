@@ -27,3 +27,36 @@ npm install --save-dev ts-jest@24.0.2
 
 
 ## Configurando o framework de testes
+
+Para configurar o Jest, adicionar um arquivo nomeado `jest.config.js` na pasta raiz do projeto com o conteúdo abaixo:
+
+```javascript
+module.exports = {
+    "roots": ["src"],
+    "transform": {"^.+\\.tsx?$": "ts-jest"}
+}
+```
+
+
+## Métodos de asserção do Jest:
+
+| Método               | Descrição                                                                 |
+|----------------------|----------------------------------------------------------------------------|
+| **toBe(value)**      | Verifica se o resultado é igual ao valor especificado (não precisa ser o mesmo objeto). |
+| **toEqual(object)**  | Verifica se o resultado é o mesmo objeto/estrutura que o valor especificado. |
+| **toMatch(regexp)**  | Verifica se o resultado corresponde à expressão regular fornecida.          |
+| **toBeDefined()**    | Verifica se o resultado está definido.                                     |
+| **toBeUndefined()**  | Verifica se o resultado não está definido.                                 |
+| **toBeNull()**       | Verifica se o resultado é `null`.                                          |
+| **toBeTruthy()**     | Verifica se o resultado é avaliado como verdadeiro (*truthy*).             |
+| **toBeFalsy()**      | Verifica se o resultado é avaliado como falso (*falsy*).                   |
+| **toContain(substring)** | Verifica se o resultado contém a substring especificada.               |
+| **toBeLessThan(value)** | Verifica se o resultado é menor que o valor especificado.               |
+| **toBeGreaterThan(value)** | Verifica se o resultado é maior que o valor especificado.            |
+
+
+## Iniciando o framework
+
+```sh
+npx jest --watchAll
+```

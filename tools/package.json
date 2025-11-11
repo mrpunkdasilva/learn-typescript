@@ -11,10 +11,10 @@
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^30.0.0",
-    "jest": "^24.7.1",
-    "ts-jest": "^24.0.2",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.3.0",
     "tsc-watch": "^2.1.2",
-    "tslint": "^5.16.0",
+    "tslint": "^5.20.1",
     "typescript": "^3.5.1"
   }
 }
