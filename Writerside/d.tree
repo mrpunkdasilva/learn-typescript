@@ -24,13 +24,15 @@
         <toc-element topic="Modules.md"/>
     </toc-element>
     <toc-element toc-title="Built-in">
-        <toc-element topic="Arrays.md"/>
-        <toc-element topic="Functions-and-Returning-Types.md"/>
-        <toc-element topic="Objects.md"/>
-        <toc-element topic="Structural-and-Nominal-Types.md"/>
-        <toc-element topic="Tuples.md"/>
-        <toc-element topic="Type-Casting.md"/>
+        <toc-element topic="Structural-and-Nominal-Types.md">
+            <toc-element topic="Static-Types.md"/>
+        </toc-element>
         <toc-element topic="Variables-and-Values.md"/>
+        <toc-element topic="Type-Casting.md"/>
+        <toc-element topic="Objects.md"/>
+        <toc-element topic="Arrays.md"/>
+        <toc-element topic="Tuples.md"/>
+        <toc-element topic="Functions-and-Returning-Types.md"/>
     </toc-element>
     <toc-element topic="Using-TypeScript-Compiler.md">
         <toc-element topic="Compiling-TS-with-TSC.md"/>
@@ -42,5 +44,4 @@
         <toc-element topic="Using-Linter.md"/>
         <toc-element topic="Unit-Tests.md"/>
     </toc-element>
-    <toc-element topic="Static-Types.md"/>
 </instance-profile>
