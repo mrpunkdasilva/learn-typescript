@@ -27,8 +27,6 @@
         <toc-element topic="Structural-and-Nominal-Types.md">
             <toc-element topic="Static-Types.md"/>
         </toc-element>
-        <toc-element topic="Using-the-any-Type.md"/>
-        <toc-element topic="Using-Type-Union.md"/>
         <toc-element topic="Variables-and-Values.md"/>
         <toc-element topic="Type-Casting.md"/>
         <toc-element topic="Objects.md"/>
@@ -36,6 +34,9 @@
         <toc-element topic="Tuples.md"/>
         <toc-element topic="Functions-and-Returning-Types.md"/>
     </toc-element>
+    <toc-element topic="Using-the-any-Type.md"/>
+    <toc-element topic="Using-Type-Union.md"/>
+    <toc-element topic="Using-Type-Assertion.md"/>
     <toc-element topic="Using-TypeScript-Compiler.md">
         <toc-element topic="Compiling-TS-with-TSC.md"/>
         <toc-element topic="Targeting-EcmaScript.md"/>
