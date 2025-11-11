@@ -76,3 +76,32 @@ let ativo: boolean = true;
 | **variable type**  | Na declaração de variáveis | `let idade: number = 25` |
 
 
+## Usando definição implicita de tipos estáticos
+
+```ts
+function calculateTax(amount: number) {
+    return amount * 1.2;
+}
+let price = 100;
+let taxAmount = calculateTax(price);
+let halfShare = taxAmount / 2;
+console.log(`Full amount in tax: ${taxAmount}`);
+console.log(`Half share: ${halfShare}`)
+```
+
+Com isso o compilador assume que o tipo é number
+
+
+> Podemos dizer ao compilador para gerar arquivos que contenha informações dos tipos por todo o codigo JS produzido. Basta editarmos o `tsconfig.json` e adicionar essa compile option:
+> `"declaration": true`
+> {style="note"}
+
+
+
+
+
+
+
+
+
+
