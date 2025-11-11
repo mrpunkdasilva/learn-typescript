@@ -42,4 +42,5 @@
         <toc-element topic="Using-Linter.md"/>
         <toc-element topic="Unit-Tests.md"/>
     </toc-element>
+    <toc-element topic="Static-Types.md"/>
 </instance-profile>
