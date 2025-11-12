@@ -39,6 +39,7 @@
     <toc-element topic="Using-Type-Assertion.md"/>
     <toc-element topic="Using-type-guard.md"/>
     <toc-element topic="Using-the-Never-Type.md"/>
+    <toc-element topic="Using-the-unknow-type.md"/>
     <toc-element topic="Using-TypeScript-Compiler.md">
         <toc-element topic="Compiling-TS-with-TSC.md"/>
         <toc-element topic="Targeting-EcmaScript.md"/>
