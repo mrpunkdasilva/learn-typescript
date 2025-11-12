@@ -34,14 +34,16 @@
         <toc-element topic="Tuples.md"/>
         <toc-element topic="Functions-and-Returning-Types.md"/>
     </toc-element>
-    <toc-element topic="Using-the-any-Type.md"/>
-    <toc-element topic="Using-Type-Union.md"/>
-    <toc-element topic="Using-Type-Assertion.md"/>
-    <toc-element topic="Using-type-guard.md"/>
-    <toc-element topic="Using-the-Never-Type.md"/>
-    <toc-element topic="Using-the-unknow-type.md"/>
-    <toc-element topic="Using-Nullable-Types.md"/>
-    <toc-element topic="Using-the-definite-assignment-assertion.md"/>
+    <toc-element toc-title="Using Type System">
+        <toc-element topic="Using-the-any-Type.md"/>
+        <toc-element topic="Using-Type-Union.md"/>
+        <toc-element topic="Using-Type-Assertion.md"/>
+        <toc-element topic="Using-type-guard.md"/>
+        <toc-element topic="Using-the-Never-Type.md"/>
+        <toc-element topic="Using-the-unknow-type.md"/>
+        <toc-element topic="Using-Nullable-Types.md"/>
+        <toc-element topic="Using-the-definite-assignment-assertion.md"/>
+    </toc-element>
     <toc-element topic="Using-TypeScript-Compiler.md">
         <toc-element topic="Compiling-TS-with-TSC.md"/>
         <toc-element topic="Targeting-EcmaScript.md"/>
