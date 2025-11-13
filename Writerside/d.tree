@@ -23,6 +23,12 @@
         </toc-element>
         <toc-element topic="Modules.md"/>
     </toc-element>
+    <toc-element topic="Using-TypeScript-Compiler.md">
+        <toc-element topic="Compiling-TS-with-TSC.md"/>
+        <toc-element topic="Targeting-EcmaScript.md"/>
+        <toc-element topic="Using-Modules.md"/>
+        <toc-element topic="Useful-compiler-options.md"/>
+    </toc-element>
     <toc-element toc-title="Built-in">
         <toc-element topic="Structural-and-Nominal-Types.md">
             <toc-element topic="Static-Types.md"/>
@@ -44,14 +50,9 @@
         <toc-element topic="Using-Nullable-Types.md"/>
         <toc-element topic="Using-the-definite-assignment-assertion.md"/>
     </toc-element>
-    <toc-element topic="Using-TypeScript-Compiler.md">
-        <toc-element topic="Compiling-TS-with-TSC.md"/>
-        <toc-element topic="Targeting-EcmaScript.md"/>
-        <toc-element topic="Using-Modules.md"/>
-        <toc-element topic="Useful-compiler-options.md"/>
-    </toc-element>
     <toc-element topic="Testing-and-Debugging-TypeScript.md">
         <toc-element topic="Using-Linter.md"/>
         <toc-element topic="Unit-Tests.md"/>
     </toc-element>
+    <toc-element topic="Using-Functions.md"/>
 </instance-profile>
