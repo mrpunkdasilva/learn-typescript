@@ -235,4 +235,66 @@ uma compiler option que vai fazer com que tenhamos isso:
 }
 ```
 
+## Using typer annotations for function results
+
+Isso funciona para explicitarmos o tipo de retorno:
+
+> function calculateTax(amount: number, discount: number = 0,
+        ...extraFees: number[]): number
+
+```ts 
+function calculateTax(amount: number, discount: number = 0,
+        ...extraFees: number[]): number {
+    return (amount * 1.2) - discount
+        + extraFees.reduce((total, val) => total + val, 0);
+}
+
+let taxValue = calculateTax(100, 0);
+
+console.log(`Tax value: ${taxValue}`)
+```
+
+
+## Defining void functions
+
+Funções que não retornam nada são procedimentos e procedimentos tem o seu tipo como `void`
+
+```ts 
+function calculateTax(amount: number, discount: number = 0,
+        ...extraFees: number[]): number {
+    return (amount * 1.2) - discount
+        + extraFees.reduce((total, val) => total + val, 0);
+}
+
+function writeValue(label: string, value: number): void {
+    console.log(`${label}: ${value}`);
+}
+
+writeValue("Tax value",  calculateTax(100, 0))
+```
+
+
+## Overloading Function Types
+
+O type union pode fazer iso possivel para definir um range de types para parametros de funções e retornos, mas eles não permitem o relacionamento entre eles para ser expressado de forma certa:
+
+```typescript
+function calculateTax(amount: number | null): number | null {
+    if (amount != null) {
+        return amount * 1.2;
+    }
+    return null;
+}
+
+function writeValue(label: string, value: number): void {
+    console.log(`${label}: ${value}`);
+}
+
+let taxAmount: number | null = calculateTax(100);
+if (typeof taxAmount === "number") {
+    writeValue("Tax value",  taxAmount);
+}
+```
+
+
 
