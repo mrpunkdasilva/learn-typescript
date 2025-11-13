@@ -98,11 +98,9 @@ console.log(`1 arg: ${taxValue}`);
 
 </note>
 
-
-
 ## Using parameter with a default value
 
-Podemos definir valores default (padrão) para parametros assim temos um fallback já no código caso não seja passado 
+Podemos definir valores default (padrão) para parametros assim temos um fallback já no código caso não seja passado
 
 ```ts 
 function calculateTax(amount, discount = 0) {
@@ -120,11 +118,10 @@ console.log(`1 arg: ${taxValue}`);
 
 Assim temos que valores default tornam esse parametro optional, já que se não for definido ele usara o fallback
 
+## Using a rest parameter
 
-
-##  Using a rest parameter
-
-A contra partida de parametros opcionais é o rest parameters, que permite uma função aceitar um número variavel de argumentos extras que são agrupados juntos e apresentados juntos 
+A contra partida de parametros opcionais é o rest parameters, que permite uma função aceitar um número variavel de
+argumentos extras que são agrupados juntos e apresentados juntos
 
 Uma função pode ter somente um rest parameter
 
@@ -148,10 +145,48 @@ O rest parameters é criado com o três pontos (ellipsis) `...` antes do nome do
 
 > function calculateTax(amount, discount = 0, ...extraFees) {
 
-
 - Os parametros seguem a ordem deles conforme a ordem
 - Qualquer argumento adicional que não tenha parametro correspondente vai para o rest parameter
 - O parametro sempre será um array
-  - Senão tiver argumentos extras, será passado um array vazio `[]`
-  - Se houver, conterá todos os valores adicionais
+    - Senão tiver argumentos extras, será passado um array vazio `[]`
+    - Se houver, conterá todos os valores adicionais
+
+## Applying type annotations to function parameters
+
+Por padrão o compiler define o type dos parameters como null, mas podemos deixar tudo mais específico
+
+Para isso basta fazermos o normal e definirmos um type com dois pontos e o type na frente do nome dop parametro:
+
+> function calculateTax(amount: number, discount: number = 0, ...extraFees: number[])
+
+Para um parametro defaul o type annotation vem antes:
+
+> discount: number = 0
+
+E para um rest parameter, costuma ser apenas um array de algum type:
+
+> ...extraFees: number[]
+
+
+```ts 
+function calculateTax(amount: number, discount: number = 0, ...extraFees: number[]) {
+    return (amount * 1.2) - discount
+        + extraFees.reduce((total, val) => total + val, 0);
+}
+
+let taxValue = calculateTax(100, 0);
+console.log(`2 args: ${taxValue}`);
+
+taxValue = calculateTax(100);
+console.log(`1 arg: ${taxValue}`);
+
+taxValue = calculateTax(100, 10, 20)
+console.log(`3 args: ${taxValue}`);
+
+taxValue = calculateTax(100, 10, 20, 1, 30, 7);
+console.log(`6 args: ${taxValue}`)
+```
+
+
+
 
