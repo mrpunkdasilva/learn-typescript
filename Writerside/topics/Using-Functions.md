@@ -167,7 +167,6 @@ E para um rest parameter, costuma ser apenas um array de algum type:
 
 > ...extraFees: number[]
 
-
 ```ts 
 function calculateTax(amount: number, discount: number = 0, ...extraFees: number[]) {
     return (amount * 1.2) - discount
@@ -187,6 +186,53 @@ taxValue = calculateTax(100, 10, 20, 1, 30, 7);
 console.log(`6 args: ${taxValue}`)
 ```
 
+## Controlling null parameters values
 
+Para controlar para que não usar valores null ou undefined
+
+```ts 
+function calculateTax(amount: number, discount: number = 0, ...extraFees: number[]) {
+    return (amount * 1.2) - discount
+        + extraFees.reduce((total, val) => total + val, 0);
+}
+
+let taxValue = calculateTax(null, 0);
+
+console.log(`Tax value: ${taxValue}`);
+```
+
+## Understanding Function Results
+
+O compilador do TS para os retornos tenta inferir o tipo automaticamente, com base no código
+
+- Se uma função retornar mais de um valor o compilador irá usar o type union para os tipos inferidos
+
+<note>
+
+As declarações como essas dos tipos de retorno ficam dentro do arquivo de declaração ou os arquivos `.d.ts` e lá vai
+estar definido a type union da função por exemplo
+
+</note>
+
+### Disabling implicit returns
+
+Para desabilitarmos o retorno implicito e assim forçar para que todo retorno tenha seu type declarado devemos adicionar
+uma compiler option que vai fazer com que tenhamos isso:
+
+> "noImplicitReturns": true
+
+- `tsconfig.json`
+```json
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "declaration": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true
+  }
+}
+```
 
 
