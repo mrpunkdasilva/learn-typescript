@@ -64,3 +64,115 @@ Como o Enum não é iteravel, podemos usar deste modo para iterar sobre ele, já
 })
 ```
 
+Como o Enum é implementado usando valores numeros do JS um Enum pode ser atribuído a um número e exibido como um valor numérico:
+
+```ts 
+function calculateTax(amount: number): number {
+    return amount * 1.2;
+}
+function writePrice(product: string, price: number): void {
+    console.log(`Price for ${product}: $${price.toFixed(2)}`);
+}
+enum Product { Hat, Gloves, Umbrella }
+let productValue: Product = 0;
+let productName: string = Product[productValue];
+console.log(`Value: ${productValue}, Name: ${productName}`)
+```
+
+O compilador enforça a checagem de type para enums, que significa que você vai receber um error se você tentar comprar valores de diferentes enums, a menos que eles tenham o mesmo valor numérico
+
+Enums proveem um  array-indexer de estilo sintatito que pode ser usado para obter o nome do valor, como isso: 
+
+```ts 
+let productName: string = Product[productValue];
+```
+
+
+
+## Using a Specific Enum Values
+
+Ótimo trecho! Vamos organizar e explicar o que está acontecendo com **Enums no TypeScript** quando usamos valores específicos ou expressões:
+
+---
+
+### 1. Valores padrão
+Por padrão, o compilador atribui números sequenciais começando em **0**:
+```ts
+enum Product {
+  Hat,       // 0
+  Gloves,    // 1
+  Umbrella   // 2
+}
+```
+No arquivo de declaração (`index.d.ts`), isso aparece como:
+```ts
+declare enum Product {
+  Hat = 0,
+  Gloves = 1,
+  Umbrella = 2
+}
+```
+
+---
+
+### 2. Valores constantes definidos pelo programador
+Você pode atribuir manualmente um valor a um item do enum. O compilador continua incrementando a partir desse valor:
+
+```ts
+enum Product {
+  Hat,         // 0
+  Gloves = 20, // definido manualmente
+  Umbrella     // 21 (gerado automaticamente)
+}
+```
+
+No `.d.ts`:
+```ts
+declare enum Product {
+  Hat = 0,
+  Gloves = 20,
+  Umbrella = 21
+}
+```
+
+<warning>
+
+**Atenção**: o compilador só olha para o **último valor numérico** para calcular o próximo. Ele não verifica duplicatas, então você pode acabar com valores repetidos sem perceber.
+
+</warning>
+
+
+
+---
+
+### Usando expressões
+O compilador também consegue avaliar **expressões simples** para definir valores:
+
+```ts
+enum OtherEnum { First = 10, Two = 20 }
+
+enum Product {
+  Hat = OtherEnum.First + 1,   // 11
+  Gloves = 20,                 // definido manualmente
+  Umbrella = Hat + Gloves      // 31
+}
+```
+
+No `.d.ts`:
+```ts
+declare enum Product {
+  Hat = 11,
+  Gloves = 20,
+  Umbrella = 31
+}
+```
+
+Ou seja:
+- `Hat` usa o valor de outro enum (`OtherEnum.First + 1`).  
+- `Umbrella` é calculado como `Hat + Gloves`.  
+- O compilador resolve essas expressões em tempo de compilação.
+
+
+
+
+
