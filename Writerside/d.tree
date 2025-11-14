@@ -55,5 +55,7 @@
         <toc-element topic="Unit-Tests.md"/>
     </toc-element>
     <toc-element topic="Using-Functions.md"/>
-    <toc-element topic="Using-Arrays.md"/>
+    <toc-element topic="Using-Arrays.md">
+        <toc-element topic="Working-with-Tuples.md"/>
+    </toc-element>
 </instance-profile>
