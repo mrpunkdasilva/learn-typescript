@@ -227,6 +227,8 @@ console.log(`City: ${City.London}`)
 ```
 
 
+## Understanding the Limitations of Enums
+
 
 
 
