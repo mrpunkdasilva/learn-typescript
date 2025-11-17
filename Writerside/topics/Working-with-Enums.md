@@ -259,6 +259,47 @@ Isso não é um probelma com string enums, que são implementados de maneira dif
 
 ## Understanding the Type Guard Limitation
 
+Um problema relacionado surge quando usamos um type guard. Testagem de tipos é feita usando a keyword do JS `typeof` e enums são implementados usando valores numericos, `typeof` não pode ser usado para ser distinguir entre valores enum e number: 
+
+
+```ts 
+function calculateTax(amount: number): number {
+    return amount * 1.2;
+}
+
+function writePrice(product: string, price: number): void {
+    console.log(`Price for ${product}: $${price.toFixed(2)}`);
+}
+
+enum OtherEnum { First = 10, Two = 20 }
+enum Product { Hat = OtherEnum.First + 1 , Gloves = 20, Umbrella = Hat + Gloves }
+
+let productValue: Product = Product.Hat;
+if (typeof productValue === "number") {
+    console.log("Value is a number");
+}
+
+let unionValue: number | Product = Product.Hat;
+if (typeof unionValue === "number") {
+    console.log("Value is a number");
+}
+```
+
+
+
+## Using constant Enums
+
+Enums em TypeScript são usados para representar conjuntos de valores nomeados, mas quando definidos como const enum, o compilador substitui cada referência diretamente pelo valor numérico correspondente, sem criar o objeto JavaScript que normalmente permite a busca reversa (valor → nome). Isso reduz o tamanho do código gerado e pode trazer uma pequena melhoria de desempenho, porém elimina a possibilidade de acessar o nome de um membro pelo seu valor. Em resumo, enums normais oferecem mais flexibilidade, enquanto const enums priorizam eficiência e simplicidade no código compilado.
+
+<note>
+É uma feature avançada que não é usada casualmente nos projetos
+</note>
+
+
+```ts 
+const enum Product { Hat, Gloves, Umbrella }
+let productValue = Product.Hat;
+```
 
 
 
