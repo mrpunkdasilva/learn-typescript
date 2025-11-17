@@ -229,6 +229,18 @@ console.log(`City: ${City.London}`)
 
 ## Understanding the Limitations of Enums
 
+Enums podem até ser uteis mas como a vida não é um morango, ele possui limitações porque eles são implementadas inteiramente pelo compilador TypeScript e traduzido para JS
 
 
+### Understanding the Value-Checking Limitation
+
+O compilador é excelente na checagem dos tipos para Enums mas isso não faz nada para valores númericos legais que são usados
+
+```ts 
+let productValue: Product = 0;
+```
+
+O compilador não previne a atribuição de um número para uma variável que o tipo é um enum quando o número não correspondente para um dos valores enum, que é o porque a saida contem undefined porque o lookup fails procura uma correspondencia `Product` para um valor númerico 
+
+O mesmo problema
 
