@@ -240,7 +240,27 @@ O compilador é excelente na checagem dos tipos para Enums mas isso não faz nad
 let productValue: Product = 0;
 ```
 
-O compilador não previne a atribuição de um número para uma variável que o tipo é um enum quando o número não correspondente para um dos valores enum, que é o porque a saida contem undefined porque o lookup fails procura uma correspondencia `Product` para um valor númerico 
+O compilador não previne a atribuição de um número para uma variável que o tipo é um enum quando o número não correspondente para um dos valores enum, que é o porque a saida contem undefined porque o lookup fails procura uma correspondencia `Product` para um valor numérico 
 
-O mesmo problema
+O mesmo problema afeta se a função usa um enum como seu tipo de retorno porque o compilador irá permitir isso para retornar qualquer valor numérico
+
+
+
+
+<note>
+
+Isso não é um probelma com string enums, que são implementados de maneira diferentes por de trás dos panos e pode atribuir valores somente do enum
+
+</note>
+
+
+
+
+
+## Understanding the Type Guard Limitation
+
+
+
+
+
 
