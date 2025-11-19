@@ -61,5 +61,6 @@
         </toc-element>
         <toc-element topic="Using-literal-types.md"/>
         <toc-element topic="Using-Literal-Value-Types-in-Functions.md"/>
+        <toc-element topic="Using-Overrides-with-Literal-Value-Types.md"/>
     </toc-element>
 </instance-profile>
