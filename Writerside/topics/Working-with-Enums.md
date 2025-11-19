@@ -287,6 +287,7 @@ if (typeof unionValue === "number") {
 
 
 
+
 ## Using constant Enums
 
 Enums em TypeScript são usados para representar conjuntos de valores nomeados, mas quando definidos como const enum, o compilador substitui cada referência diretamente pelo valor numérico correspondente, sem criar o objeto JavaScript que normalmente permite a busca reversa (valor → nome). Isso reduz o tamanho do código gerado e pode trazer uma pequena melhoria de desempenho, porém elimina a possibilidade de acessar o nome de um membro pelo seu valor. Em resumo, enums normais oferecem mais flexibilidade, enquanto const enums priorizam eficiência e simplicidade no código compilado.
@@ -295,13 +296,52 @@ Enums em TypeScript são usados para representar conjuntos de valores nomeados, 
 É uma feature avançada que não é usada casualmente nos projetos
 </note>
 
+Em TypeScript sem const, um Enum normal:
 
 ```ts 
+enum Product { Hat, Gloves, Umbrella }
+let productValue = Product.Hat;
+```
+
+Assim que compilado:
+
+```js 
+var Product;
+(function (Product) {
+    Product[Product["Hat"] = 0] = "Hat";
+    Product[Product["Gloves"] = 1] = "Gloves";
+    Product[Product["Umbrella"] = 2] = "Umbrella";
+})(Product || (Product = {}));
+
+let productValue = Product.Hat; // usa o objeto Product
+```
+
+Aqui o objeto `Product` existe em tempo de execução permite fazer:
+
+```ts 
+console.log(Product[0]); // "Hat"
+```
+
+Usando com const:
+
+```typescript
 const enum Product { Hat, Gloves, Umbrella }
 let productValue = Product.Hat;
 ```
 
+Quando compila:
 
+```typescript
+let productValue = 0 /* Hat */;
+```
 
+### Vantagens e Limitações
 
+**Vantagem:**
+* Código mais enxuto e rápido (sem criar objetos extras).
+* Pequeno ganho de performance.
 
+**Limitação:**
+* Não é possível fazer lookup reverso (Product[0]).
+* Só aceita valores constantes ou expressões simples.
+* Se tentar acessar como objeto, dá erro:

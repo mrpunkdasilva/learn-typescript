@@ -17,4 +17,4 @@ console.log(`Value: ${productValue}, Name: ${productName}`);
 
 enum City { London = "London", Paris = "Paris", NY = "New York"}
 
-console.log(`City: ${City.London}`)
+console.log(`City: ${City.London}`);
