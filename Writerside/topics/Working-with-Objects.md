@@ -300,4 +300,11 @@ dataItems.forEach(item => {
 });
 ```
 
+| Problema comum | Descrição | Consequência | Exemplo |
+|----------------|-----------|--------------|---------|
+| Teste **inadequado** com propriedades compartilhadas | Usa propriedades que existem em ambos os tipos (`id`, `name`) | O compilador não consegue diferenciar, infere `Product | Person` | `if ("id" in item && "name" in item) { ... }` |
+| Teste com **propriedade opcional** | Usa uma propriedade opcional (`price`) para distinguir | O compilador infere corretamente `Product` no bloco `if`, mas no `else` ainda considera `Product | Person` | `if ("price" in item) { ... } else { ... }` |
+
+- Evite usar propriedades comuns ou opcionais como critério de type guard.  
+- Prefira propriedades exclusivas e obrigatórias para diferenciar tipos com precisão.  
 
