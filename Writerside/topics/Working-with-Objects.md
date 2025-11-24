@@ -308,3 +308,87 @@ dataItems.forEach(item => {
 - Evite usar propriedades comuns ou opcionais como critério de type guard.  
 - Prefira propriedades exclusivas e obrigatórias para diferenciar tipos com precisão.  
 
+
+#### Type Guarding with a Type Predicate Function
+
+A keyword `in` é um caminho útil para identificar qualquer objecto conforme a shape, mas isso requer a mesma checagem esteja escrita para cada tipo necessario a ser identificado
+
+
+Conseguimos com o `in` ter uma verificação se o retorno é justamente o que esperamos que seja: 
+
+```ts 
+function isPerson(testObj: any): testObj is Person {
+```
+
+
+```ts 
+type Product = {
+    id: number,
+    name: string,
+    price?: number
+};
+
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+let hat = { id: 1, name: "Hat", price: 100 };
+let gloves = { id: 2, name: "Gloves", price: 75 };
+let umbrella = { id: 3, name: "Umbrella", price: 30 };
+let bob = { id: "bsmith", name: "Bob", city: "London" };
+
+let dataItems: (Product | Person)[] = [hat, gloves, umbrella, bob];
+
+function isPerson(testObj: any): testObj is Person {
+    return testObj.city !== undefined;
+}
+
+dataItems.forEach(item => {
+    if (isPerson(item)) {
+        console.log(`Person: ${item.name}: ${item.city}`);
+    } else  {
+        console.log(`Product: ${item.name}: ${item.price}`);
+    }
+})
+```
+
+
+#### Using Type Intersections
+
+O TS fornece um operador para unir objetos, chamada de intersection (intersecção), ela é usar a keyword `&` (ampersand) 
+- Usamos então assim: `intersection type & intersection type`
+
+```ts 
+let dataItems: (Person & Employee)[] = [bob];
+```
+
+
+```ts 
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+type Employee = {
+    company: string,
+    dept: string
+};
+
+let bob = { id: "bsmith", name: "Bob", city: "London",
+    company: "Acme Co", dept: "Sales" };
+
+let dataItems: (Person & Employee)[] = [bob];
+
+dataItems.forEach(item => {
+    console.log(`Person: ${item.id}, ${item.name}, ${item.city}`);
+    console.log(`Employee: ${item.id}, ${item.company}, ${item.dept}`);
+});
+```
+
+Assim teremos um novo tipo em que consiste ser o `Person & Employee` que contera todos os atributos tanto de Person como Employee
+
+##### Using Intersections for Data Correlation
+
