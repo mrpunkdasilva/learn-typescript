@@ -254,3 +254,50 @@ dataItems.forEach(item => console.log(`ID: ${item.id}, Type: ${typeof item}`))
 
 #### Type Guarding by Checking Properties
 
+Criar um type guard para fazer checagem da propriedade do shape do objeto, assim temos uma noção mais claro de que objeto estamos trabalhando:
+
+Assim conseguimos validar e verificar o tipo do objeto e manipularmos como precisamos:
+
+
+```ts 
+dataItems.forEach(item => {
+    if ("city" in item) {
+        console.log(`Person: ${item.name}: ${item.city}`);
+    } else  {
+        console.log(`Product: ${item.name}: ${item.price}`);
+    }
+});
+```
+
+
+
+```ts
+type Product = {
+    id: number,
+    name: string,
+    price?: number
+};
+
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+let hat = { id: 1, name: "Hat", price: 100 };
+let gloves = { id: 2, name: "Gloves", price: 75 };
+let umbrella = { id: 3, name: "Umbrella", price: 30 };
+let bob = { id: "bsmith", name: "Bob", city: "London" };
+
+let dataItems: (Product | Person)[] = [hat, gloves, umbrella, bob];
+
+dataItems.forEach(item => {
+    if ("city" in item) {
+        console.log(`Person: ${item.name}: ${item.city}`);
+    } else  {
+        console.log(`Product: ${item.name}: ${item.price}`);
+    }
+});
+```
+
+
