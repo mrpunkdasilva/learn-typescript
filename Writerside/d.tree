@@ -65,4 +65,5 @@
     <toc-element topic="Using-Overrides-with-Literal-Value-Types.md"/>
     <toc-element topic="Type-Aliases.md"/>
     <toc-element topic="Working-with-Objects.md"/>
+    <toc-element topic="Working-with-Classes-and-Interfaces.md"/>
 </instance-profile>
