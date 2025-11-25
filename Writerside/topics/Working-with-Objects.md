@@ -491,3 +491,131 @@ dataItems.forEach(item => {
     writeEmployee(item);
 });
 ```
+
+
+#### Merging Properties with Different Types
+
+Caso tenhamos propriedades de mesmo nome mas tipos diferentes, o TSC mantera o nome da propriedade e a intersecção dos tipos
+
+```typescript
+type Person = {
+    id: string,
+    name: string,
+    city: string,
+    contact: number
+};
+
+type Employee = {
+    id: string,
+    company: string,
+    dept: string,
+    contact: string
+};
+
+type EmployedPerson = Person & Employee;
+
+let typeTest = ({} as EmployedPerson).contact;
+```
+
+Ou seja, o compilador vai criar essa propriedade com esse novo tipo da intersecção, que nesse caso é `contact: number & string`
+
+```typescript 
+type Person = {
+    id: string,
+    name: string,
+    city: string,
+    contact: number // intersection type
+};
+type Employee = {
+    id: string,
+    company: string,
+    dept: string,
+    contact: string // intersection type
+}
+```
+
+Conseguimos fazer isso com propriedades com tipo de objetos: 
+
+```typescript
+type Person = {
+    id: string,
+    name: string,
+    city: string,
+    contact: { phone: number }
+};
+
+type Employee = {
+    id: string,
+    company: string,
+    dept: string,
+    contact: { name: string }
+};
+
+type EmployedPerson = Person & Employee;
+let typeTest = ({} as EmployedPerson).contact;
+
+let person1: EmployedPerson = {
+    id: "bsmith", name: "Bob Smith", city: "London",
+    company: "Acme Co", dept: "Sales",
+    contact: { name: "Alice" , phone: 6512346543 }
+};
+
+let person2: EmployedPerson = {
+    id: "dpeters", name: "Dora Peters", city: "New York",
+    company: "Acme Co", dept: "Development",
+    contact: { name: "Alice" , phone: 6512346543 }
+};
+```
+
+
+#### Merging Methods
+
+Podemos fazer com que ao criarmos uma função a assinatura dela seja uma intersecção
+
+```ts 
+type Person = {
+    id: string,
+    name: string,
+    city: string,
+    getContact(field: string): string
+};
+
+type Employee = {
+    id: string,
+    company: string,
+    dept: string
+    getContact(field: number): number
+};
+
+type EmployedPerson = Person & Employee;
+
+let person: EmployedPerson = {
+    id: "bsmith", name: "Bob Smith", city: "London",
+    company: "Acme Co", dept: "Sales",
+    getContact(field: string | number): any {
+        return typeof field === "string" ? "Alice" : 6512346543;
+    }
+};
+
+let typeTest = person.getContact;
+let stringParamTypeTest = person.getContact("Alice");
+let numberParamTypeTest = person.getContact(123);
+
+console.log(`Contact: ${person.getContact("Alice")}`);
+console.log(`Contact: ${person.getContact(12)}`);
+```
+
+Assim teremos que o metodo `getContact` tera uma intersecção dessa forma:
+
+```ts
+getContact: (field: string) => string & (field: number) => number
+```
+
+Assim teremos que vai aceitar tanto a assinatura como string como number
+
+
+
+
+
+
+    
