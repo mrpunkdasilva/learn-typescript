@@ -1,8 +1,3 @@
-# Working with Classes and Interfaces
-
-## Using Constructor Functions
-
-```ts 
 type Person = {
     id: string,
     name: string,
@@ -34,20 +29,4 @@ data.forEach(item => {
         console.log(`${item.id} ${item.name}, ${item.city}`);
     }
 });
-```
-
-Quando trabalhamos com prototypes o jeito antigo e e contraintuitiva que teriamos que usar sem o ES6+ é fazendo uso de uma função anonima que vai servir como constructor: 
-
-```ts 
-let Employee = function (id: string, name: string, dept: string, city: string) {
-    this.id = id;
-    this.name = name;
-    this.dept = dept;
-    this.city = city;
-};
-```
-
-
-
-
 
