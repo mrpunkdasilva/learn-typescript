@@ -185,3 +185,143 @@ console.log(`Dept value: ${salesEmployee.dept}`);
 ```
 
 
+---
+
+
+Esse trecho mostra um ponto muito importante sobre **modificadores de acesso no TypeScript**:  
+
+---
+
+<warning>
+
+Atenção
+- Os keywords `private` e `protected` **não existem em JavaScript puro**.  
+- Eles são apenas **regras de compilação** aplicadas pelo TypeScript para ajudar na segurança e organização do código.  
+- No código JavaScript gerado, todas as propriedades continuam acessíveis.  
+- Portanto, **não confie nesses modificadores para proteger dados sensíveis em tempo de execução** eles servem apenas para **type checking** durante o desenvolvimento.
+
+</warning>
+
+
+```ts
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+class Employee {
+    public id: string;      // acessível em qualquer lugar
+    public name: string;    // acessível em qualquer lugar
+    private dept: string;   // restrito à classe (em TS, mas acessível em JS)
+    public city: string;    // acessível em qualquer lugar
+
+    constructor(id: string, name: string, dept: string, city: string) {
+        this.id = id;
+        this.name = name;
+        this.dept = dept;
+        this.city = city;
+    }
+
+    writeDept() {
+        console.log(`${this.name} works in ${this.dept}`);
+    }
+}
+
+let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
+salesEmployee.writeDept(); // imprime: "Fidel Vega works in Sales"
+```
+
+---
+
+O TypeScript gera algo assim:
+
+```js
+class Employee {
+    constructor(id, name, dept, city) {
+        this.id = id;
+        this.name = name;
+        this.dept = dept;   // continua acessível em JS
+        this.city = city;
+    }
+    writeDept() {
+        console.log(`${this.name} works in ${this.dept}`);
+    }
+}
+let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
+salesEmployee.writeDept();
+```
+
+<note>
+
+Note que **não há nada que realmente impeça o acesso a `dept`** em tempo de execução:
+```js
+console.log(salesEmployee.dept); // "Sales" (mesmo sendo private em TS)
+```
+
+</note>
+
+
+
+
+### O que é `strictPropertyInitialization`
+
+- É uma opção de configuração no `tsconfig.json`.  
+- Quando ativada (`true`), o compilador exige que **toda propriedade declarada em uma classe** receba um valor:  
+  - **diretamente na declaração**  
+  - ou **dentro do construtor**.  
+- Evita que propriedades fiquem como `undefined` sem intenção.
+
+---
+
+#### Dependência de `strictNullChecks`
+- Para funcionar, também é necessário habilitar `strictNullChecks: true`.  
+- Isso faz com que o compilador trate `null` e `undefined` como tipos distintos e não atribuíveis a outros tipos sem verificação explícita.
+
+---
+
+#### Exemplo sem inicialização (gera erro)
+```ts
+class Employee {
+  id: string;   // Erro: não inicializada
+  name: string; // Erro: não inicializada
+}
+```
+
+Com `strictPropertyInitialization: true`, o compilador reclama porque `id` e `name` não recebem valores.
+
+---
+
+#### Exemplo corrigido
+```ts
+class Employee {
+  id: string;
+  name: string;
+
+  constructor(id: string, name: string) {
+    this.id = id;     // inicializada no construtor
+    this.name = name; // inicializada no construtor
+  }
+}
+```
+
+Ou inicializando diretamente:
+```ts
+class Employee {
+  id: string = "default";
+  name: string = "unknown";
+}
+```
+
+---
+
+#### Exceções
+- Você pode usar o **definite assignment assertion** (`!`) para dizer ao compilador que a propriedade será inicializada em algum momento, mesmo que ele não consiga verificar:
+
+```ts
+class Employee {
+  id!: string; // compilador aceita, mas cuidado: runtime pode ter undefined
+  name!: string;
+}
+```
+
