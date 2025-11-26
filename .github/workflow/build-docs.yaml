@@ -12,7 +12,7 @@ permissions:
   id-token: write
 
 env:
-  INSTANCE: 'Writerside/in'
+  INSTANCE: 'Writerside/d'
   DOCKER_VERSION: '2025.04.8412'
   # IS_GROUP: 'true'  # Uncomment to build a group
 
