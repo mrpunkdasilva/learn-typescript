@@ -1,12 +1,3 @@
-# Type Guarding an Abstract Class
-
-As classes abstratas no TS são geradas como classes regulares do JS pelo TSC
-
-Assim o pulo do gato dessa abordagem é fazer com que o TSC previna a classe abstrada de ser instanciadas e isso não importa para o código JS, podendo potencialmente permitir objetos serem criados de classes abstratas
-
-Porém essa abordagem faz com que o `instanceof` consiga ser usada para narrow types:
-
-```ts 
 abstract class Person {
     constructor(public id: string, public name: string,
                 public city: string) {
@@ -46,5 +37,4 @@ data.forEach(item => {
     } else {
         console.log(`Customer: ${item.name}`);
     }
-})''
-```
+})

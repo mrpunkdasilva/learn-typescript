@@ -70,5 +70,6 @@
         <toc-element topic="Using-an-Abstract-Class.md">
             <toc-element topic="Type-Guarding-an-Abstract-Class.md"/>
         </toc-element>
+        <toc-element topic="Interfaces.md"/>
     </toc-element>
 </instance-profile>
