@@ -393,3 +393,56 @@ O keyword readonly é forçado pelo compilador do TS e não existe no JS então 
 
 ## Simplifying Class Constructors
 
+No JS puro as classes usam construtores para criar a instância das propriedades dinamicamente mas no TS as propriedades precisam estar explicitamente definidas
+
+A abordagem do TS é a mais familiar que encontramos entre as que os programadores usam mas isso pode ser verboso e repetitivo então no TS temos uma melhoria dessa abordagem para ser mais _sintax sugar_ que é apenas definirmos os parametros no constructor, já que não precisamos de  nenhum statement para fazer essa atribuição dos valores no construtor:
+
+```ts 
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+class Employee {
+    constructor(public readonly id: string, public name: string,
+            private dept: string, public city: string) {
+        // no statements required
+    }
+    writeDept() {
+        console.log(`${this.name} works in ${this.dept}`);
+    }
+}
+
+let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
+salesEmployee.writeDept();
+//salesEmployee.id = "fidel";
+```
+    
+Basta fazermos deste modo:
+
+```ts 
+ constructor(public readonly id: string, public name: string,
+            private dept: string, public city: string) {
+        // no statements required
+    }
+```
+
+
+<note>
+
+Para simplificar ainda mais, podemos usar os access control keywords aplicados no parametro como foi mostrado no código:
+
+```ts 
+ constructor(public readonly id: string, public name: string,
+            private dept: string, public city: string) {
+        // no statements required
+    }
+```
+
+</note>
+
+
+
+
+

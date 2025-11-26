@@ -1,0 +1,3 @@
+# Type Guarding an Abstract Class
+
+Start typing here...
