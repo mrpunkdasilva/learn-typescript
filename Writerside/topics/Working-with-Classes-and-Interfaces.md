@@ -325,3 +325,71 @@ class Employee {
 }
 ```
 
+
+
+## Defining Read-Only Properties
+
+O TS oferece a feature de criar propriedades constantes que pode ser usado para criar instancia de propriedades que os valores atribuidos pelo construtor mas não pode ser mudado de outras formas 
+
+```ts 
+type Person = {
+    id: string,
+    name: string,
+    city: string
+};
+
+class Employee {
+    public readonly id: string;
+    public name: string;
+    private dept: string;
+    public city: string;
+
+    constructor(id: string, name: string, dept: string, city: string) {
+        this.id = id;
+        this.name = name;
+        this.dept = dept;
+        this.city = city;
+    }
+
+    writeDept() {
+        console.log(`${this.name} works in ${this.dept}`);
+    }
+}
+
+let salesEmployee = new Employee("fvega", "Fidel Vega", "Sales", "Paris");
+
+salesEmployee.writeDept();
+salesEmployee.id = "fidel";
+```
+
+<note>
+
+A keyword deve ser vir antes do nome da propriedade
+
+```ts 
+public readonly id: string;
+```
+
+</note>
+
+
+Assim quando tentamos editar uma read only property:
+
+> salesEmployee.id = "fidel";
+
+Teremos o seguinte erro de build:
+
+> error TS2540: Cannot assign to 'id' because it is a read-only 
+property
+
+
+<warning>
+
+O keyword readonly é forçado pelo compilador do TS e não existe no JS então não vai afetar no código final gerado, logo é melhor não usar essa feature para proteger dados e operações sensiveis 
+
+</warning>
+
+
+
+## Simplifying Class Constructors
+
