@@ -72,6 +72,8 @@
         </toc-element>
         <toc-element topic="Interfaces.md">
             <toc-element topic="Implementing-Multiple-Interfaces.md"/>
+            <toc-element topic="Extending-Interfaces.md"/>
+            <toc-element topic="Interfaces-and-Shape-Types.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
