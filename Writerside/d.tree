@@ -76,6 +76,8 @@
             <toc-element topic="Interfaces-and-Shape-Types.md"/>
             <toc-element topic="Defining-Optional-Interface-Properties-and-Methods.md"/>
             <toc-element topic="Defining-an-Abstract-Interface-Implementation.md"/>
+            <toc-element topic="Type-Guarding-an-Interface.md"/>
         </toc-element>
+        <toc-element topic="Dynamically-Creating-Properties.md"/>
     </toc-element>
 </instance-profile>
