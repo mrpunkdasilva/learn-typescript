@@ -10,4 +10,8 @@
         <description><![CDATA[Created after removal of "<Strict-Mode.md>" from Learn TypeScript]]></description>
         <accepts>Strict-Mode.html</accepts>
     </rule>
+    <rule id="563cf790">
+        <description>Created after removal of "Constraining Generic Type Values" from Learn TypeScript</description>
+        <accepts>Constraining-Generic-Type-Values.html</accepts>
+    </rule>
 </rules>
