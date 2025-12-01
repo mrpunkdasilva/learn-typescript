@@ -206,11 +206,7 @@ constructor(initialItems: T[]) {
 let peopleData = new DataCollection<Person>(people);
 ```
 
-
-
-
-
-
+**Código completo:**
 
 ```ts 
 import {Person, Product} from "./dataTypes";
