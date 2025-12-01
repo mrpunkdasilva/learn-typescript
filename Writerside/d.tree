@@ -85,5 +85,6 @@
         <toc-element topic="Generic-Class.md"/>
         <toc-element topic="Using-Different-Type-Arguments.md"/>
         <toc-element topic="Constraining-Generic-Type-Values.md"/>
+        <toc-element topic="Constraining-Generic-Types-Using-a-Shape.md"/>
     </toc-element>
 </instance-profile>
