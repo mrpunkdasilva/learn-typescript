@@ -24,14 +24,6 @@ Só é possivel instanciar `DataCollection<T>` com tipos  que sejam atribuiveis 
 Se passarmos que `T` será `Person` então só vai trabalhar com teste tipo logo teremos só determinados metodos do tipo informado
 
 
-
-
-
-
-
-
-
-
 **Código completo:**
 
 ```ts 
