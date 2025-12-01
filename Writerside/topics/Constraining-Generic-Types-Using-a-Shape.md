@@ -49,3 +49,9 @@ console.log(`Product Names: ${productData.getNames().join(", ")}`);
 let cityData = new DataCollection<City>(cities);
 console.log(`City  Names: ${cityData.getNames().join(", ")}`);
 ```
+
+<note>
+
+Podemos restringir tipos genericos também com interfaces e type aliases
+
+</note>
