@@ -80,4 +80,5 @@
         </toc-element>
         <toc-element topic="Dynamically-Creating-Properties.md"/>
     </toc-element>
+    <toc-element topic="Using-Generic-Types.md"/>
 </instance-profile>
