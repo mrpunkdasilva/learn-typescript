@@ -80,5 +80,9 @@
         </toc-element>
         <toc-element topic="Dynamically-Creating-Properties.md"/>
     </toc-element>
-    <toc-element topic="Using-Generic-Types.md"/>
+    <toc-element topic="Using-Generic-Types.md">
+        <toc-element topic="Add-supporting-to-another-type.md"/>
+        <toc-element topic="Generic-Class.md"/>
+        <toc-element topic="Using-Different-Type-Arguments.md"/>
+    </toc-element>
 </instance-profile>
