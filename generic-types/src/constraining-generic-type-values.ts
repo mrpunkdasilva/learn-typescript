@@ -33,3 +33,7 @@ let productData = new DataCollection<Product>(products);
 let firstProduct = productData.getItem(0);
 console.log(`First Product: ${firstProduct.name}, ${firstProduct.price}`);
 console.log(`Product Names: ${productData.getNames().join(", ")}`);
+
+let cityData = new DataCollection<City>(cities);
+console.log(`City  Names: ${cityData.getNames().join(", ")}`);
+
