@@ -1,6 +1,5 @@
 # Defining Multiple Type Parameters
 
-
 Podemos definir mais de um tipo na parametrização das classes genericas, ou seja, definirmos além do `T`
 
 > O `T` pode ser substituido por qualquer coisa, mas o popular é usar `T`
@@ -14,7 +13,9 @@ class DataCollection<T extends { name: string }, U>
 
 <note>
 
-No exemplo abaixo, fazemos não só a definição múltipla dos parametros como também podemos fazer a restrição dos parametros que no caso foi uma restrição com shape e fizemos para o parametros `T`, mas poderiamos como já foi visto ter feito a restrição com value
+No exemplo abaixo, fazemos não só a definição múltipla dos parametros como também podemos fazer a restrição dos
+parametros que no caso foi uma restrição com shape e fizemos para o parametros `T`, mas poderiamos como já foi visto ter
+feito a restrição com value
 
 </note>
 

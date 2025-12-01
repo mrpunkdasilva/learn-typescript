@@ -89,5 +89,6 @@
             <toc-element topic="Constraining-Generic-Types-Using-a-Shape.md"/>
         </toc-element>
         <toc-element topic="Defining-Multiple-Type-Parameters.md"/>
+        <toc-element topic="Applying-a-Type-Parameter-to-a-Method.md"/>
     </toc-element>
 </instance-profile>
