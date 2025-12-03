@@ -9,17 +9,21 @@ Esse exemplo mostra como **subclassificar uma classe genérica** em TypeScript e
    ```ts
    class DataCollection<T extends { name: string }> {
        protected items: T[] = [];
+   
        constructor(initialItems: T[]) {
            this.items.push(...initialItems);
        }
+   
        collate<U>(targetData: U[], itemProp: string, targetProp: string): (T & U)[] {
            let results = [];
+   
            this.items.forEach(item => {
                let match = targetData.find(d => d[targetProp] === item[itemProp]);
                if (match !== undefined) {
                    results.push({ ...match, ...item });
                }
            });
+   
            return results;
        }
    }
@@ -30,9 +34,11 @@ Esse exemplo mostra como **subclassificar uma classe genérica** em TypeScript e
 2. **Subclasse que adiciona funcionalidade**  
    ```ts
    class SearchableCollection<T extends { name: string }> extends DataCollection<T> {
+   
        constructor(initialItems: T[]) {
            super(initialItems);
        }
+   
        find(name: string): T | undefined {
            return this.items.find(item => item.name === name);
        }
@@ -68,9 +74,6 @@ Esse exemplo mostra como **subclassificar uma classe genérica** em TypeScript e
 
 
 ---
-
-
-
 
 
 
