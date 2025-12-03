@@ -5,6 +5,51 @@ Algumas classes precisam definir funcionalidades que só estão disponíveis usa
 Nessas situações, uma subclasse pode usar um tipo fixo para o parâmetro de tipo da superclasse, de modo que a subclasse não seja uma classe genérica.
 
 
+## Como funciona
+
+### Classe base genérica
+```ts
+class DataCollection<T> {
+    protected items: T[] = [];
+    constructor(initialItems: T[]) {
+        this.items.push(...initialItems);
+    }
+    getItem(index: number): T {
+        return this.items[index];
+    }
+}
+```
+- `DataCollection<T>` aceita qualquer tipo `T`.  
+- É flexível, mas não sabe nada sobre propriedades específicas de `T`.
+
+---
+
+### Subclasse com tipo fixo
+```ts
+class SearchableCollection extends DataCollection<Employee> {
+    constructor(initialItems: Employee[]) {
+        super(initialItems);
+    }
+    find(name: string): Employee | undefined {
+        return this.items.find(emp => emp.name === name);
+    }
+}
+```
+- Aqui, `SearchableCollection` **não é genérica**.  
+- O parâmetro `T` da superclasse foi fixado como `Employee`.  
+- Isso significa que:
+  - Só pode lidar com objetos `Employee`.  
+  - O método `find` pode acessar com segurança propriedades de `Employee` (`name`, `role`, etc.), sem precisar de narrowing.
+
+
+
+
+
+---
+
+
+
+
 
 **Código completo:**
 
