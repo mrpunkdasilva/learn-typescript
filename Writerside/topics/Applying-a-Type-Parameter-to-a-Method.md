@@ -17,7 +17,6 @@ Assim, cada chamada de collate pode usar um tipo diferente.
 
 Isso torna a classe mais reutilizável e flexível.
 
-
 ```ts
 import {City, Person, Product, Employee} from "./dataTypes";
 
