@@ -59,8 +59,3 @@ export declare let peopleData: DataCollection<Person>;
 export declare let collatedData: (Person & City)[];
 export declare let empData: (Person & Employee)[];
 ```
-
-
-<note>
-
-</note>
