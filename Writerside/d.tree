@@ -91,7 +91,9 @@
         <toc-element topic="Defining-Multiple-Type-Parameters.md"/>
         <toc-element topic="Applying-a-Type-Parameter-to-a-Method.md"/>
         <toc-element topic="Allowing-the-Compiler-to-infer-type-arguments.md"/>
-        <toc-element topic="Extending-Generic-Classes.md"/>
-        <toc-element topic="Fixing-the-Generic-Type-Parameter.md"/>
+        <toc-element topic="Extending-Generic-Classes.md">
+            <toc-element topic="Fixing-the-Generic-Type-Parameter.md"/>
+            <toc-element topic="Restricting-the-Generic-Type-Parameter.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
