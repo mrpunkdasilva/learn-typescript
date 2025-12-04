@@ -3,6 +3,10 @@
 A terceira abordagem é um misto entre os dois exemplos anteriores, provendo uma variavel de tipo generico mas restringindo isso para especificar ops tipos. Isso permite funcionalidades que dependem de features de classes particulares sem fixar o tipo de type parameter completamente  
 
 
+* DataCollection<T> exige que T tenha uma propriedade name.
+* SearchableCollection<T> restringe ainda mais: T deve ser Employee, Person ou a união Employee | Person.
+* Isso é válido porque tanto Employee quanto Person possuem name.
+
 ```ts
 import {City, Person, Product, Employee} from "./dataTypes";
 
@@ -52,3 +56,7 @@ let employeeData = new SearchableCollection<Employee>(employees);
 employeeData.find("Sales").forEach(e =>
     console.log(`Employee ${e.name}, ${e.role}`));
 ```
+
+Quando uma subclasse herda de uma classe genérica, o parâmetro de tipo que ela especifica precisa ser atribuível ao parâmetro da superclasse.
+
+Isso significa que a subclasse só pode usar um tipo mais restrito (compatível com a restrição definida na classe base).
