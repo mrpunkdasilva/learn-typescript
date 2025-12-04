@@ -97,5 +97,6 @@
         </toc-element>
         <toc-element topic="Type-Guarding-Generic-Types.md"/>
         <toc-element topic="Defining-a-Static-Method-on-a-Generic-Class.md"/>
+        <toc-element topic="Defining-Generic-Interfaces.md"/>
     </toc-element>
 </instance-profile>
