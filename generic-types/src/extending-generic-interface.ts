@@ -1,10 +1,3 @@
-# Extending Generic Interfaces
-
-Intefaces genericas podem ser extendidas apenas como interfaces regulares e as opções para lidar com esses tipos de parametros são os mesmos quando extendidos de uma classe generica, como mostra o código abaixo um conjunto de interfaces que extendem a interface 1`Collection<T>`:
-
-
-
-```ts 
 import {City, Person, Product, Employee} from "./dataTypes";
 
 type  shapeType = { name: string };
@@ -28,5 +21,4 @@ interface ProductCollection extends Collection<Product> {
 interface PeopleCollection<T extends Product | Employee> extends Collection<T> {
     getNames(): string[];
 }
-```
 
