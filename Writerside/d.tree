@@ -104,6 +104,7 @@
             <toc-element topic="Implementing-a-Generic-Interface.md">
                 <toc-element topic="Passing-on-the-Generic-Type-Parameter.md"/>
             </toc-element>
+            <toc-element topic="Restricting-or-Fixing-the-Generic-Type-Parameter.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>

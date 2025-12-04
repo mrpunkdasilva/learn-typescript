@@ -48,3 +48,4 @@ let peopleCollection: Collection<Person> = new ArrayCollection<Person>();
 ```
 
 Assim temos o type argument resolve o tipo generico para a classe e a interface isso implementa um objeto `ArrayCollection<Person>` implementando a interface `Collection<Person>`
+
