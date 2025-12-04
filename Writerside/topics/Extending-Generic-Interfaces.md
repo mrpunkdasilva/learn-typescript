@@ -30,3 +30,5 @@ interface PeopleCollection<T extends Product | Employee> extends Collection<T> {
 }
 ```
 
+
+
