@@ -76,7 +76,13 @@ A propriedade result de cada objeto `IteratorResult<Product>` retornará um Prod
 
 
 
+<warning>
 
+**Usando iteradores com JS ES5+**
+
+Iteradores foram introduzidos no padrão JavaScript ES6. Se você utilizar iteradores em seu projeto e estiver direcionando para versões anteriores do JavaScript, então deve definir a propriedade de compilador downlevelIteration do TypeScript como true
+
+</warning>
 
 
 
