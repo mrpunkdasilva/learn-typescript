@@ -108,6 +108,8 @@
             <toc-element topic="Creating-an-Abstract-Interface-Implementation.md"/>
         </toc-element>
     </toc-element>
-    <toc-element topic="Advanced-Generic-Types.md"/>
-    <toc-element topic="Using-Generic-Iterators.md"/>
+    <toc-element topic="Advanced-Generic-Types.md">
+        <toc-element topic="Using-Generic-Iterators.md"/>
+        <toc-element topic="Combining-an-Iterable-and-an-Iterator.md"/>
+    </toc-element>
 </instance-profile>
