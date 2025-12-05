@@ -1,8 +1,6 @@
 # Restricting or Fixing the Generic Type Parameter
 
-Classes podem prover uma implementação de uma interface
-
-
+Classes podem prover uma implementação de uma interface que é especifica para um tipo ou subconjunto de tipos suportados pela interface:
 
 
 ```ts 
