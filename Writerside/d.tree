@@ -109,4 +109,5 @@
         </toc-element>
     </toc-element>
     <toc-element topic="Advanced-Generic-Types.md"/>
+    <toc-element topic="Using-Generic-Iterators.md"/>
 </instance-profile>
