@@ -52,6 +52,12 @@ getValue(e, "name");
 getValue(e, "role")
 ```
 
+O exemplo define uma função nomeada `getValue`, que tipo parametro `K` é restringido usando `typeof` `T` que significa que `K` pode ser o nome de somente uma das proprieades definidas por `T`, lembrnaod do tipo usado para `T` quando a função é invocada. Quando a função `getValue` é usada com um objeto `Product`, o keyname parameter pode ser somente `name`ou `price` 
+
+E quando a função `getValue` é usada com o objeto `Product`, os nomes dos parametros podem ser somente `name`e `role`. Em ambos os casos, o nome chave do parametro pode ser usado para obtenção segura ou definir o valor de uma propriedade de objetos `Product` ou `Employee` 
+
+
+
 
 
 
