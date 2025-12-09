@@ -19,3 +19,10 @@ export class Product {
 ```
 
 
+Atribuir qualquer outro valor para `myVar`, que o final statement atribuido para produzir um erro de compilação:
+
+```
+src/index.ts(34,1): error TS2322: Type '"someOtherName"' is not assignable to type '"name" | 
+"price"'.
+```
+
