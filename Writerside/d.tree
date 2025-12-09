@@ -114,5 +114,6 @@
         <toc-element topic="Creating-an-Iterable-Class.md"/>
         <toc-element topic="Using-Index-Types.md"/>
         <toc-element topic="Using-the-Index-Type-Query.md"/>
+        <toc-element topic="Explicitly-Providing-Generic-Type-Parameters-for-Index-Types.md"/>
     </toc-element>
 </instance-profile>
