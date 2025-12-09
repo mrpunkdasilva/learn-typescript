@@ -112,5 +112,7 @@
         <toc-element topic="Using-Generic-Iterators.md"/>
         <toc-element topic="Combining-an-Iterable-and-an-Iterator.md"/>
         <toc-element topic="Creating-an-Iterable-Class.md"/>
+        <toc-element topic="Using-Index-Types.md"/>
+        <toc-element topic="Using-the-Index-Type-Query.md"/>
     </toc-element>
 </instance-profile>
