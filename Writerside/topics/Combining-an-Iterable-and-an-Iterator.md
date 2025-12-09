@@ -41,4 +41,7 @@ console.log(`There are ${productCollection.count} products`);
     console.log(`Product: ${p.name}, ${p.price}`))
 ```
 
+O método `values` retorna o objeto `IterableIterator`, o  que é possível porque o resultado do método `Map` definetodos os membros especificados pela interface
+
+A interface combinada permite que o resultado do método `values` seja iterado diretamente e o exemplo utiliza o operador spread para preencher um array e em seguida enumera seu conteúdo com o metodo `forEach`
 
