@@ -46,5 +46,14 @@ let itemByKey = productCollection.get("Hat");
 console.log(`Item: ${itemByKey.name}, ${itemByKey.price}`)
 ```
 
+A class foi reescrita com um type parameter generico `K` que é restrito para `keyof T` que é o data type de objetos
+guardados pela collection. Uma nova instância de `Collection<T, K>` é então criado deste modo:
+
+...
+let productCollection: Collection<Product, "name">
+    = new Collection(products, "name")
+```
+
+
 
 
