@@ -121,5 +121,6 @@
             </toc-element>
         </toc-element>
         <toc-element topic="Using-Type-Mapping.md"/>
+        <toc-element topic="Using-a-Generic-Type-Parameter-with-a-Mapped-Type.md"/>
     </toc-element>
 </instance-profile>

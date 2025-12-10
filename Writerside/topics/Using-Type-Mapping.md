@@ -31,3 +31,5 @@ type MappedProduct = {
     price: number;
 }
 ```
+
+
