@@ -18,4 +18,30 @@ console.log(`Mapped type: ${c.name}, ${c.population}`);
 
 O type `Mapped<T>` define um generic type parameter nomeado `T` que é o tipo para ser transformado. O type parameter é usado no nome e type selectors, significa que qualquer tipo pode ser mapeado usando um generic type parameter, mostrado abaixo, o `Mapped<T>` mapped type é usado no `Product` e `City`
 
+<note>
 
+Entendendo o mapeamento para construtores e métodos
+
+O mapeamento opera somente sobre propriedades. Quando aplicada para uma classe, um type mapping produz um shape type que contem propriedades mas omite o construtor e a implementação dos metodos. Por exemplo está classe:
+
+```ts 
+class MyClass {
+    constructor(public name: string ) {}
+    getName(): string {
+        return this.name;
+    }
+}
+```
+
+É mapeada para os seguintes tipos pelo `Mapping<T>`:
+
+```ts
+{
+    name: string;
+    getName: () => string;
+}
+```
+
+Mapeamento de tipos produz shapes que podem ser usados para objetos literais, implementado pelas classes ou extendidos por interfaces. Type mapping não produz uma classe
+
+</note>
