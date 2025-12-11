@@ -24,3 +24,13 @@ O segundo generic type parameter é usado para especificar o tipo para a proprie
 ```typescript 
 let p1: CustomMapped<"name" | "city", string> = { name: "Bob",  city: "London"}
 ```
+
+O mapeamento produz um tipo com 2 propriedades strings: `name` e `city`. TypeScript prove o mapeamento built-in `Record` que  performa a mesma tarefa
+
+
+```ts 
+let p2: Record<"name"| "city", string> = { name: "Alice", city: "Paris"};
+```
+
+
+
