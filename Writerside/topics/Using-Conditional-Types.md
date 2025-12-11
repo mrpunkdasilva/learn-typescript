@@ -35,3 +35,8 @@ let secondVal: resultType<false> = 100;
 let numberTypeCheck: number = secondVal
 ```
 
+O compilador enforça type safety com as conditional types. No final do statement do código a conditional type resolve para number mas é atribuido uma string value que produz o seguinte erro de compilação:
+
+```
+error TS2322: Type '"String Value"' is not assignable to type 'number'
+```
