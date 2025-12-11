@@ -16,4 +16,11 @@ console.log(`Custom mapped type: ${p1.name}, ${p1.city}`);
 console.log(`Built-in mapped type: ${p2.name}, ${p2.city}`)
 ```
 
+O primeiro generic type parameter é restringido usando `keyof any` que significa que um literal value type union pode ser especificado e isso pode conter os nomes das propriedades requeridas para o novo tipo
 
+
+O segundo generic type parameter é usado para especificar o tipo para a propriedade que são criadas e usadas deste modo:
+
+```typescript 
+let p1: CustomMapped<"name" | "city", string> = { name: "Bob",  city: "London"}
+```
