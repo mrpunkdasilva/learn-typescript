@@ -1,5 +1,9 @@
 # Mapping Specific Properties
 
+O index type query para um tipo mapeado pode ser expressado como um generic type parameter que pode então ser usado
+
+
+
 
 ```ts 
 import {City, Person, Product, Employee} from "./dataTypes";
