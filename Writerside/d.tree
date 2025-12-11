@@ -129,5 +129,6 @@
             </toc-element>
         </toc-element>
         <toc-element topic="Using-Conditional-Types.md"/>
+        <toc-element topic="THE-DANGER-OF-CONDITIONAL-TYPES.md"/>
     </toc-element>
 </instance-profile>
