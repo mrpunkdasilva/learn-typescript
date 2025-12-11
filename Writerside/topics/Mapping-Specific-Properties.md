@@ -1,8 +1,6 @@
 # Mapping Specific Properties
 
-O index type query para um tipo mapeado pode ser expressado como um generic type parameter que pode então ser usado
-
-
+O index type query para um tipo mapeado pode ser expressado como um generic type parameter que pode então ser usado para selecionar uma propriedade especifica para mapear pelo nome, como mostrado abaixo:
 
 
 ```ts 
