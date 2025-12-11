@@ -28,3 +28,10 @@ let firstVal: resultType<true> = "String Value";
 let stringTypeCheck: string = firstVal;
 ```
 
+O compilador resolve a conditional type e sabe que a type annotation para `firstVal` é string, permitindo um valor literal de string atribuido a `firstVal`. Quando o generic type argumenté falso a conditional retorna como number
+
+```ts 
+let secondVal: resultType<false> = 100;
+let numberTypeCheck: number = secondVal
+```
+
