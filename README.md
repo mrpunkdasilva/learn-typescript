@@ -35,7 +35,7 @@ To get a local copy up and running, follow these simple steps.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/learn-typescript.git
+   git clone https://github.com/mrpunkdasilva/learn-typescript.git
    cd learn-typescript
    ```
 2. Navigate into each sub-project directory (e.g., `advanced-generic-types`, `arrays`) and install their respective dependencies:
