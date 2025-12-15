@@ -8,7 +8,6 @@ Mais combinações de tipos complexos podem ser descritas por _nesting condition
 ## Código:
 
 ```ts 
-
 import
 {
     City, Person, Product, Employee
@@ -24,8 +23,9 @@ type nestedType<T extends references>
 let firstVal: nestedType<"London"> = new City("London", 8136000);
 let secondVal: nestedType<"Bob"> = new Person("Bob", "London");
 let thirdVal: nestedType<"Kayak"> = new Product("Kayak", 275);
-
 ```
+
+O tipo `nestedType<tT>` é um nested conditional type que está entre 3 tipos de resultados, baseado nos valores do generic type parameter. Como notado, tipos condicionais complexos podem ser dificeis de entender e isso é especialmente verdade quando eles estão aninhados
 
 
 
