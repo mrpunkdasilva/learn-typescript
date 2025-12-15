@@ -72,6 +72,12 @@ Quando o argumento para o parametro `format` é `true`, a conditioanl type resol
 return format ? `$${totalValue.toFixed()}` : totalValue as any;
 ```
 
+<warning>
 
+## RETURNING VALUES IN METHODS THAT USE A CONDITIONAL TYPE
+
+No tempo de escrita o TSC tem dificuldade de correlacionar o data type dos valores retornado pelos metodos e funções quando conditional types são usadas e para essa questão que usamos um type assertion no método `total` para chamar o compiler para tratar o resultado como any. Sem o type annotation, o compilador vai reportar um erro   
+
+</warning>
 
 
