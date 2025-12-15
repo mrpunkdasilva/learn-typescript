@@ -1,8 +1,7 @@
 # Nesting Conditional Types
 
 
-
-
+Mais combinações de tipos complexos podem ser descritas por _nesting conditional types_. Um conditional type resulta tipos que podem ser outro conditional type e o TSC  irá seguir a corrente de expressões até que alcance resultados não condicionais
 
 
 
@@ -27,3 +26,6 @@ let secondVal: nestedType<"Bob"> = new Person("Bob", "London");
 let thirdVal: nestedType<"Kayak"> = new Product("Kayak", 275);
 
 ```
+
+
+
