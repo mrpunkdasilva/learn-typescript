@@ -1,6 +1,3 @@
-# Using Conditional Types in Generic Classes
-
-```typescript 
 import {Product} from "./dataTypes";
 
 type resultType<T extends boolean> = T extends true ? string : number;
@@ -28,8 +25,3 @@ console.log(`Formatted value: ${firstVal}`);
 
 let secondVal: number = data.total("price", false);
 console.log(`Unformatted value: ${secondVal}`);
-```
-
-
-
-
