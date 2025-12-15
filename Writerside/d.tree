@@ -128,7 +128,9 @@
                 <toc-element topic="Mapping-Specific-Properties.md"/>
             </toc-element>
         </toc-element>
-        <toc-element topic="Using-Conditional-Types.md"/>
-        <toc-element topic="THE-DANGER-OF-CONDITIONAL-TYPES.md"/>
+        <toc-element topic="Using-Conditional-Types.md">
+            <toc-element topic="THE-DANGER-OF-CONDITIONAL-TYPES.md"/>
+            <toc-element topic="Nesting-Conditional-Types.md"/>
+        </toc-element>
     </toc-element>
 </instance-profile>
