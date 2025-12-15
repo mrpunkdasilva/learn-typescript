@@ -132,6 +132,7 @@
             <toc-element topic="THE-DANGER-OF-CONDITIONAL-TYPES.md"/>
             <toc-element topic="Nesting-Conditional-Types.md"/>
             <toc-element topic="Using-Conditional-Types-in-Generic-Classes.md"/>
+            <toc-element topic="Using-Conditional-Types-with-Type-Unions.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
