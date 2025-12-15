@@ -69,31 +69,31 @@ The repository is organized into several modules, each focusing on a specific ar
 
 ### Advanced Generic Types
 
-Explores complex generic type scenarios, including type mapping, conditional types, and constraining generic parameters.
+Explores complex generic type scenarios, including type mapping, conditional types, and constraining generic parameters. [Learn more about Advanced Generic Types](Writerside/topics/Advanced-Generic-Types.md)
 
 ### Arrays
 
-Covers various ways to work with arrays in TypeScript, including type inference, tuple types, and enums.
+Covers various ways to work with arrays in TypeScript, including type inference, tuple types, and enums. [Learn more about Arrays](Writerside/topics/Arrays.md)
 
 ### Classes and Interfaces
 
-Deep dive into object-oriented programming with TypeScript, focusing on classes, interfaces, inheritance, and abstract classes.
+Deep dive into object-oriented programming with TypeScript, focusing on classes, interfaces, inheritance, and abstract classes. [Learn more about Classes](Writerside/topics/Classes.md) and [Interfaces](Writerside/topics/Interfaces.md)
 
 ### Functions
 
-Examples demonstrating function types, overloaded functions, optional parameters, and more.
+Examples demonstrating function types, overloaded functions, optional parameters, and more. [Learn more about Functions](Writerside/topics/Functions-and-Returning-Types.md)
 
 ### Generic Types
 
-Introduces the concept of generic types to create reusable components that work with a variety of data types.
+Introduces the concept of generic types to create reusable components that work with a variety of data types. [Learn more about Generic Types](Writerside/topics/Using-Generic-Types.md)
 
 ### Objects
 
-Working with object types, property modifiers, and advanced object patterns.
+Working with object types, property modifiers, and advanced object patterns. [Learn more about Objects](Writerside/topics/Objects.md)
 
 ### Essential TypeScript
 
-A structured course-like content covering fundamental to intermediate TypeScript concepts.
+A structured course-like content covering fundamental to intermediate TypeScript concepts. [Learn more about Essential TypeScript](Writerside/topics/Static-Types.md)
 
 ## Contributing
 
