@@ -1,5 +1,7 @@
 # Using Conditional Types in Type Mappings
 
+Conditional types podem ser combinados com type mappings, permitindo diferentes transformações para ser aplicada para as propriedades no tipo que pode prover grande flexibilidade que usar outro feature sozinha, como mostrado no código abaixo um type mapping que usa um conditional type
+
 
 ## Código
 
@@ -18,3 +20,9 @@ function convertProduct(p: Product): modifiedProduct {
 let kayak = convertProduct(new Product("Kayak", 275));
 console.log(`Product: ${kayak.name}, ${kayak.price}`);
 ```
+
+
+
+
+
+
