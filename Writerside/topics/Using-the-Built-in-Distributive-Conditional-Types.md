@@ -1,4 +1,4 @@
-# Tipos condicionais embutidos (Tabela 13-7)
+# Using the Built-in Distributive Conditional Types
 
 | Nome             | Descrição                                                                 | Exemplo                                                                 |
 |------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------|
