@@ -133,6 +133,7 @@
             <toc-element topic="Nesting-Conditional-Types.md"/>
             <toc-element topic="Using-Conditional-Types-in-Generic-Classes.md"/>
             <toc-element topic="Using-Conditional-Types-with-Type-Unions.md"/>
+            <toc-element topic="Using-the-Built-in-Distributive-Conditional-Types.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
