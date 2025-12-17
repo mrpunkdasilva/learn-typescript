@@ -137,6 +137,7 @@
             </toc-element>
             <toc-element topic="Using-Conditional-Types-in-Type-Mappings.md"/>
             <toc-element topic="Identifying-Properties-of-a-Specific-Type.md"/>
+            <toc-element topic="Inferring-Additional-Types-in-Conditions.md"/>
         </toc-element>
     </toc-element>
 </instance-profile>
