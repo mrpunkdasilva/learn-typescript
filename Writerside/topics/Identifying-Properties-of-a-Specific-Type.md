@@ -77,6 +77,11 @@ function total<T, P extends propertiesOfType<T, number>>(
 ```
 
 
+O parametro `propName` da função `total`  pode ser usado somente com os nomes das propriedades númericas no tipo `T`, como isso:
+
+```ts 
+console.log(`Total: ${total(products, "price")}`);
+```
 
 
 
