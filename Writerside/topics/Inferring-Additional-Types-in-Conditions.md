@@ -50,5 +50,12 @@ console.log(`Array Value: ${getValue(products, "price")}`);
 console.log(`Single Total: ${getValue(products[0], "price")}`);
 ```
 
-Tipos são inferidos com o `infer` e eles introducem um generic type que 
+Tipos são inferidos com o `infer` e eles introduzem um generic type que tipara por inferencia pelo compilador quando o conditional type é resolvido como mostrado abaixo:
+
+![image_4.png](image_4.png)
+
+
+No código o tipo `U` é inferido se `T` é um array. O tipo de `U` é inferido pelo compiler do generic type parameter `T` quando o tipo é resolvido. O efeito é este tipo do `targetKeys<Product>` e o `targetKeys<Product[]>` ambos produzindo a união `"name" | "price"`
+
+O conditional type pode ser empregado para restringir a propriedade da função `getValue<T, P>`, provendo uma tipagem consistência para ambos objetos e arrays
 
