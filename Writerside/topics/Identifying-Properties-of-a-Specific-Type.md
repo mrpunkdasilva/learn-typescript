@@ -5,7 +5,6 @@ Um requisito comum é limitar um parâmetro de tipo de forma que ele possa ser u
 
 
 
-
 ## Código
 
 ```typescript
@@ -23,5 +22,13 @@ function total<T, P extends propertiesOfType<T, number>>(data: T[],
 
 let products = [new Product("Kayak", 275), new Product("Lifejacket", 48.95)];
 console.log(`Total: ${total(products, "price")}`);
+```
+
+o método para identificar a propriedade é incomum, então vamos quebrar o statement em duas partes para facilitar a explicação. O primeiro passo é usar um type mapping que tem uma conditional statement:
+
+```typescript
+type unionOfTypeNames<T, U> = {
+    [P in keyof T]: T[P] extends U ? P : never;    
+}
 ```
 
