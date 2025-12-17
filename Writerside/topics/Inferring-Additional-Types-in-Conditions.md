@@ -33,6 +33,22 @@ parameter of type 'number | "length" | "toString" | "toLocaleString" | "pop" | "
 O TS tem a keyword `infer` podem ser usado para inferir tipos que não são explicitamente expressas nos parametros do conditional type. Para o exemplo, isso significa que significa que podemos perguntar ao compilador para inferir os tipos de objetos no array, como mostrado abaixo:
 
 ```typescript
+import {City, Person, Product, Employee} from "./dataTypes";
 
+type targetKeys<T> = T extends (infer U)[] ? keyof U : keyof T;
+
+function getValue<T, P extends targetKeys<T>>(data: T, propName: P): T[P] {
+    if (Array.isArray(data)) {
+        return data[0][propName];
+    } else {
+        return data[propName];
+    }
+}
+
+let products = [new Product("Kayak", 275), new Product("Lifejacket", 48.95)];
+console.log(`Array Value: ${getValue(products, "price")}`);
+console.log(`Single Total: ${getValue(products[0], "price")}`);
 ```
+
+Tipos são inferidos com o `infer` e eles introducem um generic type que 
 
