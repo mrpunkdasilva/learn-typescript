@@ -47,3 +47,36 @@ Esse tipo mapeado prove a entrada para o segundo estágio no processo, que é pa
 type propertiesOfType<T, U> = unionOfTypeNames<T, U>[keyof T];
 ```
 
+
+- O operador de acesso indexado ([keyof T]) percorre todas as propriedades de T
+- O resultado é uma união dos tipos dessas propriedades
+- Assim, propertiesOfType<T, U> gera um tipo que representa a união dos tipos das propriedades filtradas pelo mapeamento unionOfTypeNames<T, U>
+
+Para o tipo mapeado criado pela `unionOfTypeName<Product, number>`, o operador de aceso indexado produz a seguinte união:
+
+```
+never | "price"
+```
+
+
+Como notado previamente, `never` é automaticamente removido de uniões, deixando uma união de tipos de valores literais, que são as propriedades de tipos requeridos. A união dos nomes das propriedades pode ser então usando para restringir generic type parameters:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
