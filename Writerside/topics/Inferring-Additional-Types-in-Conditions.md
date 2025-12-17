@@ -30,5 +30,9 @@ parameter of type 'number | "length" | "toString" | "toLocaleString" | "pop" | "
 "indexOf" | "lastIndexOf" | ... 14 more ... | "includes"' . 
 ```
  
-O TS tem a keyword `infer` podem ser usado para inferir tipos que não são 
+O TS tem a keyword `infer` podem ser usado para inferir tipos que não são explicitamente expressas nos parametros do conditional type. Para o exemplo, isso significa que significa que podemos perguntar ao compilador para inferir os tipos de objetos no array, como mostrado abaixo:
+
+```typescript
+
+```
 
