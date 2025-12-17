@@ -139,5 +139,6 @@
             <toc-element topic="Identifying-Properties-of-a-Specific-Type.md"/>
             <toc-element topic="Inferring-Additional-Types-in-Conditions.md"/>
         </toc-element>
+        <toc-element topic="Inferring-Types-of-Functions.md"/>
     </toc-element>
 </instance-profile>
