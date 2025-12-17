@@ -34,8 +34,7 @@ type unionOfTypeNames<T, U> = {
 ```
 
 A conditional statement checa o tipo de cada propriedade, se a propriedade não tem o tipo alvo então o tipo é trocado
-para `never`. Se uma propriedade tem um tipo esperado, então o tipos é mudado para o valor literal que é a propriedade "
-name". Isso significa que mapping `unionOfTypeNames<Product, number>` produz o seguinte tipo mapeado:
+para `never`. Se uma propriedade tem um tipo esperado, então o tipos é mudado para o valor literal que é a propriedade "name". Isso significa que mapping `unionOfTypeNames<Product, number>` produz o seguinte tipo mapeado:
 
 ```typescript
 {
@@ -46,8 +45,7 @@ name". Isso significa que mapping `unionOfTypeNames<Product, number>` produz o s
 }
 ```
 
-Esse tipo mapeado prove a entrada para o segundo estágio no processo, que é para o operador de indexação de acesso para
-obter uma união de tipos de propriedades definidas pelo mapped type, como esse:
+Esse tipo mapeado prove a entrada para o segundo estágio no processo, que é para o operador de indexação de acesso para obter uma união de tipos de propriedades definidas pelo mapped type, como esse:
 
 ```ts 
 type propertiesOfType<T, U> = unionOfTypeNames<T, U>[keyof T];
@@ -58,14 +56,13 @@ type propertiesOfType<T, U> = unionOfTypeNames<T, U>[keyof T];
 - Assim, propertiesOfType<T, U> gera um tipo que representa a união dos tipos das propriedades filtradas pelo mapeamento
   unionOfTypeNames<T, U>
 
-Para o tipo mapeado criado pela `unionOfTypeName<Product, number>`, o operador de aceso indexado produz a seguinte
-união:
+Para o tipo mapeado criado pela `unionOfTypeName<Product, number>`, o operador de aceso indexado produz a seguinte união:
 
 ```
 never | "price"
 ```
 
-Como notado previamente, `never` é automaticamente removido de uniões, deixando uma união de tipos de valores literais, que são as propriedades de tipos requeridos. A união dos nomes das propriedades pode ser então usando para restringir generic type parameters:
+Como notado previamente, `never` é automaticamente removido de uniões, deixando uma união de tipos de valores literais, sendo as propriedades de tipos requeridos. A união dos nomes das propriedades pode ser então usando para restringir generic type parameters:
 
 ```typescript
 function total<T, P extends propertiesOfType<T, number>>(
