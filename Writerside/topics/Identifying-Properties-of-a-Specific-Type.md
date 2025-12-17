@@ -32,3 +32,7 @@ type unionOfTypeNames<T, U> = {
 }
 ```
 
+A conditional statement checa o tipo de cada propriedade, se a propriedade não tem o tipo alvo então o tipo é trocado para `never`
+
+
+
