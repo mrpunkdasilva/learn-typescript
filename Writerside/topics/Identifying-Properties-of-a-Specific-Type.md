@@ -32,7 +32,18 @@ type unionOfTypeNames<T, U> = {
 }
 ```
 
-A conditional statement checa o tipo de cada propriedade, se a propriedade não tem o tipo alvo então o tipo é trocado para `never`
+A conditional statement checa o tipo de cada propriedade, se a propriedade não tem o tipo alvo então o tipo é trocado para `never`. Se uma propriedade tem um tipo esperado, então o  tipos é mudado para o valor literal que é a propriedade "name". Isso significa que mapping `unionOfTypeNames<Product, number>` produz o seguinte tipo mapeado:
 
+```typescript
+{ 
+  name: never, 
+  price: "price"
+}
+```
 
+Esse tipo mapeado prove a entrada para o segundo estágio no processo, que é para o operador de indexação de acesso para obter uma união de tipos de propriedades definidas pelo mapped type, como esse:
+
+```ts 
+type propertiesOfType<T, U> = unionOfTypeNames<T, U>[keyof T];
+```
 
