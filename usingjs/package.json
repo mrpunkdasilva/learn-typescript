@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.5.1"
+  }
+}
