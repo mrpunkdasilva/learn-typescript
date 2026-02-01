@@ -9,5 +9,5 @@
             <noindex-content>true</noindex-content>
         </variables>
     </build-profile>
-
+<llms-txt single-file="true"/>
 </buildprofiles>
