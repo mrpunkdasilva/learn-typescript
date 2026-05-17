@@ -1,4 +1,4 @@
-# Empty MD Topic
+# Working with JavaScript
 
 <note>
 
