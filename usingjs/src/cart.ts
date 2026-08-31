@@ -1,6 +1,6 @@
 import {SportSProduct} from "./product";
 
-class CarItem {
+class CartItem {
     constructor(
         public product: SportSProduct,
         public quantity: number
@@ -19,7 +19,7 @@ export class Cart {
         // no statements required
     }
 
-    addProduct(product: SportsProduct, quantity: number): number {
+    addProduct(product: SportSProduct, quantity: number): number {
         if (this.items.has(product.id)) {
             let item = this.items.get(product.id);
             item.quantity += quantity;
